@@ -1,0 +1,250 @@
+
+body {
+  --sy: 0;
+  --ch: 0;
+  margin: 0;
+  height: 10000px;
+}
+
+#canvas{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  font-family: 'Kanit', sans-serif;
+}
+
+#popup {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: hsl(0, 100%, 100%);
+  text-align: left;
+  width: 150px;
+  color: black;
+  text-shadow: none;
+  z-index: 10;
+  width: 200px!important;
+  height: auto!important;
+  font-size: 30px;
+  opacity: 0.2;
+}
+
+.page{
+  width: 100%;
+  height: 100%;
+  transition: all 1s;
+  position: fixed;
+  opacity: 0;
+  background: hsl(calc(var(--ch)/18*360), 100%, 50%);
+}
+
+.box {
+  transition: 0s;
+}
+
+#topic {
+  background: url("pic/topic/background.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.p-left{
+  width: 400px;
+  height: 400px;
+  bottom: -65px;
+  left: calc((var(--sy)/520*40)*1%);
+}
+
+.p-right{
+  width: 400px;
+  height: 400px;
+  bottom: -65px;
+  right: calc((var(--sy)/520*40)*1%);
+}
+
+#axe{
+  background: url("pic/axe/background.png");
+  background-position: bottom;
+  background-size: cover;
+}
+
+#axe .box {
+  width: 450px;
+  height: 450px;
+  bottom: 0;
+  background:none;
+}
+.axeContent{
+  position:fixed;
+  bottom: 0;
+  padding: 50px;
+  font-size: 24px;
+}
+
+#spear .box {
+  width: 200px;
+  height: 200px;
+  right: 0;
+}
+
+.page>*{
+  position: absolute;
+  transition: 1s;
+  
+}
+
+.page[data-show = "1"]{
+  opacity: 1;
+}
+
+.tr{
+  text-align: right;
+}
+
+.text{
+  transform: translateY(50px);
+  z-index: 5;
+}
+
+#topic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#topic .text{
+  font-size: calc(100vw / 15);
+}
+
+#topic .drone{
+  right: 300px;
+  top: 100px;
+  width: 300px;
+  height: 300px;
+  animation: flying 2s infinite alternate linear;
+}
+
+#topic .heri-1{
+  top: -150px;
+  right: 80%;
+  animation: flying 3s 1s infinite alternate linear;
+}
+
+#topic .heri-2{
+  right: 150px;
+  top: -200px;
+  width: 150px;
+  animation: flying 1.5s 1.5s infinite alternate linear;
+}
+
+.page[data-show="1"] .text{
+  transform: translateY(0px);
+}
+
+.page .text div {
+  font-size: calc(100vw / 35);
+  transform: translateY(-20px);
+}
+
+#axe .box{
+  animation: axeMove 2s infinite linear alternate,axeSpin 2s infinite linear alternate;
+  transform: scale(2);
+}
+
+#axe .leaves {
+  right: 100px;
+  top: -300px;
+  animation: leavesFall 4s 2s infinite linear;
+}
+
+#spear{
+  background: url("pic/spear/background.png");
+  background-position: bottom;
+  background-size: cover;
+}
+
+#spear .content{
+  top: 0;
+  padding: 50px;
+  font-size: 24px;
+}
+
+#spear .fish{
+  width: 300px;
+  bottom: -20px;
+  left: 50%;
+}
+
+#spear .spash{
+  width: 300px;
+  bottom: -20px;
+  left: 50%;
+}
+
+#s1{
+  animation: spash 2s 0.5s infinite linear;
+}
+
+#s2{
+  animation: spash 2s 1.5s infinite linear;
+}
+
+#spearTool {
+  width: 300px;
+  left: 100%;
+  bottom: 80%;
+  animation: spearMove 1s infinite linear;
+}
+
+
+@keyframes axeMove{
+        from {
+          left: 0vw;
+        }
+        to {
+          left: 75vw;
+        }
+      }
+@keyframes axeSpin{
+        from{
+        transform : rotate(-50deg) scale(2);
+      }
+        to{
+        transform : rotate(1050deg) scale(0.9);
+        }
+      }
+@keyframes leavesFall{
+  from {
+    transform: translate(0px, 0px);
+    opacity: 1;
+  }
+  to {
+    transform: translate(-300px, 300px);
+    opacity: 0;
+  }
+}
+
+@keyframes flying{
+  from{
+    transform: translate(0px, 0px)
+  }
+  to {
+    transform: translate(-20px, 40px)
+  }
+}
+@keyframes spearMove{
+  50% {
+    bottom: 125px;
+    left: 60%;
+  }
+  100%{
+    bottom: 125px;
+    left: 60%;
+  }
+}
+@keyframes spash{
+  to{
+    opacity: 0;
+    transform: scale(2);
+  }
+}
