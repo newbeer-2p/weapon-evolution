@@ -20,4 +20,13 @@ document.body.onscroll = function(){
     pages[pageno].dataset.show = "1";
   document.body.style.setProperty("--ch", pageno);
   document.body.style.setProperty("--sy", scrollY);
+
+//   document.querySelector("#popup").innerHTML = `Y = ${scrollY}<br>Page = ${pageno}`
+}
+
+function goTo(y){
+    window.scroll(0, 520 * (y-1));
+    pageno = y;
+    document.body.style.setProperty("--sy", scrollY);
+    document.body.style.setProperty("--ch", pageno);
 }
