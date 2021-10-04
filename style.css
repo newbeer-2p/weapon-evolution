@@ -218,6 +218,7 @@ body {
   width: 300px;
   bottom: -20px;
   left: 50%;
+  animation: fishmove 2s infinite linear;
 }
 
 #spear .spash{
@@ -241,6 +242,18 @@ body {
   animation: spearMove 1s infinite linear;
 }
 
+#bow{
+  background: url("pic/bow/archerscene.png");
+  background-position: bottom;
+  background-size: cover;
+}
+
+.bowContent{
+  position:fixed;
+  bottom: 0;
+  padding: 50px;
+  font-size: 24px;
+}
 
 @keyframes axeMove{
         from {
@@ -279,17 +292,28 @@ body {
 }
 @keyframes spearMove{
   50% {
-    bottom: 125px;
-    left: 60%;
+    bottom: 120px;
+    left: 55%;
   }
   100%{
-    bottom: 125px;
-    left: 60%;
+    bottom: 120px;
+    left: 55%;
   }
 }
 @keyframes spash{
   to{
     opacity: 0;
     transform: scale(2);
+  }
+}
+
+@keyframes fishmove{
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
   }
 }
