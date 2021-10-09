@@ -4,37 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weapon Evolution | Rocket Project</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="canvas">
+  <div class="navbar">
+    <div class="btnItem">
+        <div onclick="goTo(1)"></div>
+        <div onclick="goTo(2)"></div>
+        <div onclick="goTo(3)"></div>
+        <div onclick="goTo(4)"></div>
+        <div onclick="goTo(5)"></div>
+        <div onclick="goTo(6)"></div>
+        <div onclick="goTo(7)"></div>
+        <div onclick="goTo(8)"></div>
+        <div onclick="goTo(9)"></div>
+        <div onclick="goTo(10)"></div>
+        <div onclick="goTo(11)"></div>
+        <div onclick="goTo(12)"></div>
+        <div onclick="goTo(13)"></div>
+    </div>
+    <div class="progessbar"></div>
+  </div>
+    <div id="canvas" onclick="play()">
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
         </style>
-        <div class="navbar">
-            <div class="btnItem">
-                <div onclick="goTo(1)"></div>
-                <div onclick="goTo(2)"></div>
-                <div onclick="goTo(3)"></div>
-                <div onclick="goTo(4)"></div>
-                <div onclick="goTo(5)"></div>
-                <div onclick="goTo(6)"></div>
-                <div onclick="goTo(7)"></div>
-                <div onclick="goTo(8)"></div>
-                <div onclick="goTo(9)"></div>
-                <div onclick="goTo(10)"></div>
-                <div onclick="goTo(11)"></div>
-                <div onclick="goTo(12)"></div>
-                <div onclick="goTo(13)"></div>
-                <div onclick="goTo(14)"></div>
-                <div onclick="goTo(15)"></div>
-                <div onclick="goTo(16)"></div>
-                <div onclick="goTo(17)"></div>
-                <div onclick="goTo(18)"></div>
-            </div>
-            <div class="progessbar"></div>
-        </div>
+        
         <div class="page" id="topic" data-show="1">
           <div class="text">
             วิวัฒนาการของอาวุธ
@@ -55,9 +51,11 @@
           <div class="heri-2">
             <img src="pic/topic/jet.png" alt="">
           </div>
+          <div class="scrollDown">เลื่อนลงไปข้างล่าง</div>
         </div>
         
         <div class="page" id="axe" data-show="0">
+          <div class="clickme">คลิกเพื่อปาหวาน</div>
           <div class="text axeContent">
             <h1>ขวาน ( 1,000,000 BC )</h1>
             ใช้ในการตัดไม้ หรือหั่นไม้ รวมไปถึงการใช้เป็นอาวุธ โดยทั่วไปขวานจะประกอบด้วยสองส่วนหลักคือ ส่วนหัว และส่วนด้ามจับ โดยจะเห็นได้ว่าขวานเป็นตัวอย่างหนึ่งที่เป็นเทคโนโลยีเกี่ยวกับลิ่ม ที่ใช้ในการผ่อนแรง ขวานในสมัยโบราณ ส่วนหัวทำจากหิน และผูกเข้ากันกับด้ามไม้ ในขณะที่ขวานในยุคปัจจุบันส่วนหัว จะสร้างจากเหล็กและด้ามจับไม้ โดยขวานจะมีทั้งแบบที่ด้ามยาว และแบบด้ามสั้นขึ้นอยู่กับประเภทการใช้งานของขวานนั้นๆ</div>
@@ -75,9 +73,6 @@
             ในยุคแรก ๆ พบหอกเป็นเพียงไม้แหลม ต่อมาพบหอกส่วนมากเป็นหินปลายแหลม นำมาผูกติดกับท่อนไม้ ซึ่งซึ่งจะพบในยุคหินเก่า ในขณะที่ในยุคหินใหม่นั้นจะมีการเหลาปลายหอกให้แหลมขึ้น ส่วนใหญ่ใช้ในการล่าสัตว์
           </div>
           <div class="spash" id="s1">
-            <img src="pic/spear/effect1.png" width="100%">
-          </div>
-          <div class="spash" id="s2">
             <img src="pic/spear/effect1.png" width="100%">
           </div>
           <div class="fish">
@@ -98,16 +93,8 @@
           <div class="text">Sword</div>
         </div>
         
-        <div class="page" id="cestus" data-show="0">
-          <div class="text">Cestus</div>
-        </div>
-        
         <div class="page" id="shuriken" data-show="0">
           <div class="text">Shuriken</div>
-        </div>
-        
-        <div class="page" id="cannon" data-show="0">
-          <div class="text">Cannon</div>
         </div>
         
         <div class="page" id="matchlock" data-show="0">
@@ -118,10 +105,6 @@
           <div class="text">Gatlering Gun</div>
         </div>
         
-        <div class="page" id="poisonGas" data-show="0">
-          <div class="text">Poison Gas</div>
-        </div>
-        
         <div class="page" id="bazooka" data-show="0">
           <div class="text">Bazooka</div>
         </div>
@@ -130,16 +113,8 @@
           <div class="text">Tank</div>
         </div>
         
-        <div class="page" id="fighterPlane" data-show="0">
-          <div class="text">Fighter Plane</div>
-        </div>
-        
         <div class="page" id="atomicBomb" data-show="0">
           <div class="text">Atomic Bomb</div>
-        </div>
-        
-        <div class="page" id="cyberWarfare" data-show="0">
-          <div class="text">Cyber Warfare</div>
         </div>
         
         <div class="page" id="drone" data-show="0">

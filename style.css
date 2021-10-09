@@ -2,9 +2,9 @@
 body {
   --sy: 0;
   --ch: 0;
-  --pg: 18;
+  --pg: 13;
   margin: 0;
-  height: 10000px;
+  height: calc(520 * (var(--pg) + 3) * 1px);
 }
 
 #canvas{
@@ -29,6 +29,27 @@ body {
   height: auto!important;
   font-size: 30px;
   opacity: 0.2;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }
 
 .navbar {
@@ -60,7 +81,7 @@ body {
 }
 
 .navbar .progessbar{
-  background: hsl(30, 100%, 50%);
+  background: #2e1207;
   height: 100%;
   transition: .5s;
   width: calc((var(--sy)/(520*var(--pg)))*100 * 1%);
@@ -68,7 +89,7 @@ body {
 
 .navbar .btnItem div:hover {
   transform: scale(1.2);
-  background: hsl(30, 100%, 50%);
+  background: #2e1207;
   opacity: 1;
   z-index: 25;
 }
@@ -85,51 +106,6 @@ body {
 
 .box {
   transition: 0s;
-}
-
-#topic {
-  background: url("pic/topic/background.png");
-  background-position: center;
-  background-size: cover;
-}
-
-.p-left{
-  width: 400px;
-  height: 400px;
-  bottom: -65px;
-  left: calc((var(--sy)/520*40)*1%);
-}
-
-.p-right{
-  width: 400px;
-  height: 400px;
-  bottom: -65px;
-  right: calc((var(--sy)/520*40)*1%);
-}
-
-#axe{
-  background: url("pic/axe/background.png");
-  background-position: bottom;
-  background-size: cover;
-}
-
-#axe .box {
-  width: 450px;
-  height: 450px;
-  bottom: 0;
-  background:none;
-}
-.axeContent{
-  position:fixed;
-  bottom: 0;
-  padding: 50px;
-  font-size: 24px;
-}
-
-#spear .box {
-  width: 200px;
-  height: 200px;
-  right: 0;
 }
 
 .page>*{
@@ -149,16 +125,57 @@ body {
 .text{
   transform: translateY(50px);
   z-index: 5;
+  /* text-shadow: 1px 1px 4px hsl(0, 100%, 100%); */
 }
+
+.page[data-show="1"] .text{
+  transform: translateY(0px);
+}
+
+.page .text div {
+  font-size: calc(100vw / 35);
+  transform: translateY(-20px);
+}
+
+.clickme {
+  font-size: 65px;
+  text-align: center;
+  width: 100vw;
+  color: #2e1207;
+  top: 150px;
+  opacity: .5;
+  z-index: 30;
+  transition: .5s;
+}
+
+/* Home */
 
 #topic {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  background: url("pic/topic/background.png");
+  background-position: center;
+  background-size: cover;
 }
 
 #topic .text{
   font-size: calc(100vw / 15);
+}
+
+#topic .p-left{
+  width: 400px;
+  height: 400px;
+  bottom: -65px;
+  left: calc((var(--sy)/520*40)*1%);
+}
+
+#topic .p-right{
+  width: 400px;
+  height: 400px;
+  bottom: -65px;
+  right: calc((var(--sy)/520*40)*1%);
 }
 
 #topic .drone{
@@ -182,24 +199,47 @@ body {
   animation: flying 1.5s 1.5s infinite alternate linear;
 }
 
-.page[data-show="1"] .text{
-  transform: translateY(0px);
+#topic .scrollDown{
+  font-size: calc(100vw / 25);
+  opacity: .5;
+  color: #2e1207;
+  text-align: center;
+  bottom: 100px;
+  animation: staring 1s infinite alternate linear;
 }
 
-.page .text div {
-  font-size: calc(100vw / 35);
-  transform: translateY(-20px);
+/* Axe Page */
+
+#axe{
+  background: url("pic/axe/background.png");
+  background-position: bottom;
+  background-size: cover;
 }
 
-#axe .box{
-  animation: axeMove 2s infinite linear alternate,axeSpin 2s infinite linear alternate;
-  transform: scale(2);
+#axe .box {
+  width: 450px;
+  height: 450px;
+  bottom: 0;
+  background:none;
+  
+  /* animation: axeMove 2s infinite linear alternate,axeSpin 2s infinite linear alternate; */
+  animation: none;
+  transform: rotate(-50deg) scale(2);
+}
+#axe .axeContent{
+  position:fixed;
+  bottom: 0;
+  padding: 50px;
+  font-size: 24px;
+  opacity: 0;
 }
 
 #axe .leaves {
   right: 100px;
   top: -300px;
-  animation: leavesFall 4s 2s infinite linear;
+  animation: none;
+  opacity: 0;
+  /* animation: leavesFall 4s 2s infinite linear; */
 }
 
 #spear{
@@ -207,6 +247,14 @@ body {
   background-position: bottom;
   background-size: cover;
 }
+
+#spear .box {
+  width: 200px;
+  height: 200px;
+  right: 0;
+}
+
+/* Spear Page */
 
 #spear .content{
   top: 0;
@@ -227,20 +275,18 @@ body {
   left: 50%;
 }
 
-#s1{
-  animation: spash 2s 0.5s infinite linear;
+#spear #s1{
+  animation: spash 2s 2s infinite linear;
 }
 
-#s2{
-  animation: spash 2s 1.5s infinite linear;
-}
-
-#spearTool {
+#spear #spearTool {
   width: 300px;
   left: 100%;
   bottom: 80%;
-  animation: spearMove 1s infinite linear;
+  animation: spearMove 2s 1s infinite linear;
 }
+
+/* Bow Page */
 
 #bow{
   background: url("pic/bow/archerscene.png");
@@ -248,35 +294,45 @@ body {
   background-size: cover;
 }
 
-.bowContent{
+#bow .bowContent{
   position:fixed;
   bottom: 0;
   padding: 50px;
   font-size: 24px;
 }
 
-@keyframes axeMove{
-        from {
-          left: 0vw;
-        }
-        to {
-          left: 75vw;
-        }
-      }
-@keyframes axeSpin{
-        from{
-        transform : rotate(-50deg) scale(2);
-      }
-        to{
-        transform : rotate(1050deg) scale(0.9);
-        }
-      }
-@keyframes leavesFall{
+/* Animations */
+
+@keyframes staring{
   from {
+    opacity: 0;
+  }
+}
+
+  @keyframes axeMove{
+  from {
+    left: 0vw;
+  }
+  to {
+    left: 75vw;
+  }
+}
+
+@keyframes axeSpin{
+  from {
+    transform : rotate(-50deg) scale(2);
+  }
+  to {
+    transform : rotate(1050deg) scale(0.9);
+  }
+}
+
+@keyframes leavesFall{
+  0% {
     transform: translate(0px, 0px);
     opacity: 1;
   }
-  to {
+  50% {
     transform: translate(-300px, 300px);
     opacity: 0;
   }
@@ -292,12 +348,12 @@ body {
 }
 @keyframes spearMove{
   50% {
-    bottom: 120px;
-    left: 55%;
+    bottom: 125px;
+    left: 58%;
   }
   100%{
-    bottom: 120px;
-    left: 55%;
+    bottom: 125px;
+    left: 58%;
   }
 }
 @keyframes spash{
@@ -308,11 +364,11 @@ body {
 }
 
 @keyframes fishmove{
-  from {
+  0% {
     transform: translateY(40px);
     opacity: 0;
   }
-  to {
+  50% {
     transform: translateY(0px);
     opacity: 1;
   }

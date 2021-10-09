@@ -21,6 +21,17 @@ document.body.onscroll = function(){
   document.body.style.setProperty("--ch", pageno);
   document.body.style.setProperty("--sy", scrollY);
 
+  if (scrollY >= 250){
+    let scd = document.querySelectorAll(".scrollDown")[0].style;
+    scd.animation = "none";
+    scd.opacity = "0"
+  }
+  else{
+    let scd = document.querySelectorAll(".scrollDown")[0].style;
+    scd.animation = "staring 1s infinite alternate linear";
+    scd.opacity = "1"
+  }
+
 //   document.querySelector("#popup").innerHTML = `Y = ${scrollY}<br>Page = ${pageno}`
 }
 
@@ -29,4 +40,24 @@ function goTo(y){
     pageno = y;
     document.body.style.setProperty("--sy", scrollY);
     document.body.style.setProperty("--ch", pageno);
+}
+
+let playing = false;
+
+function play(){
+  if (!playing){
+  if (pageno == 1){
+      document.querySelectorAll(".axeContent")[0].style.opacity = "1";
+      document.querySelector("#axeTool").style.animation = "axeMove 2s infinite alternate,axeSpin 2s infinite linear alternate";
+      document.querySelectorAll(".leaves")[0].style.animation = "leavesFall 4s 2s infinite linear";
+      document.querySelectorAll(".clickme")[0].style.opacity = "0"
+      playing = true;
+      window.setTimeout(function() {
+        document.querySelectorAll(".clickme")[0].style.opacity = ".5";
+        document.querySelector("#axeTool").style.animation = "none";
+        document.querySelectorAll(".leaves")[0].style.animation = "none";
+        playing = false;
+      }, 4000);
+    }
+  }
 }
