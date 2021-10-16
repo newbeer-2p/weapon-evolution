@@ -300,7 +300,36 @@ body {
   padding: 50px;
   font-size: 24px;
 }
+#sword{
+  background: url("pic/sword/swordscene.png");
+  background-position: bottom;
+  background-size: cover;
+}
+#sword .swordContent{
+  position:fixed;
+  bottom: 0;
+  padding: 50px;
+  font-size: 24px;
+}
+.swordLeft{
+  width: 700px;
+  left: 20%;
+  bottom: 30%;
+}
+.swordRight{
+  width: 400px;
+  left: 55%;
+  bottom: 30%;
+}
+.peopleRight{
+  left: 50%;
+  bottom: -25%;
+}
 
+.light{
+  top: 0%;
+  left:10%;
+}
 /* Animations */
 
 @keyframes staring{
