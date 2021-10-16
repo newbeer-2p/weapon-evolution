@@ -346,6 +346,25 @@ body {
   top: 0%;
   left:10%;
 }
+#cannon{
+  background: url("pic/cannon/cannonscene.png");
+  background-position: bottom;
+  background-size: cover;
+}
+#cannon .cannonContent{
+  position:fixed;
+  bottom: 0;
+  padding: 50px;
+  font-size: 24px;
+}
+.cannonTool{
+  bottom: 0%;
+  right: 55%;
+}
+.cannonAmmo{
+  right: 35%;
+  bottom: 40%;
+}
 
 /* Animations */
 
