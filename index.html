@@ -85,6 +85,7 @@
         </div>
         
         <div class="page" id="bow" data-show="0">
+          <div class="clickme">คลิก</div>
           <div class="text bowContent">
             <h1>ธนู (160,000 BC)</h1>
             ธนูเป็นสิ่งที่มนุษย์ประดิษฐ์ขึ้นมาเพื่อใช้ในการล่าสัตว์และป้องกันตัวตั้งแต่ยุคดึกดำบรรพ์ 
@@ -103,11 +104,14 @@
             <h1>ดาบ (140,000 BC)</h1>
             ดาบได้รับการพัฒนาในยุคสัมฤทธิ์ ซึ่งพัฒนามาจากดาบสั้น ตัวอย่างแรกสุดที่มีอายุประมาณ 1600 ปีก่อนคริสตกาล ต่อมาคือยุคเหล็ก ดาบยังคงค่อนข้างสั้นและไม่มีครอสการ์ด สปาธา(Spatha) ซึ่งถูกพัฒนาขึ้นในกองทัพโรมันตอนปลาย ได้กลายเป็นบรรพบุรุษขของดาบยุโรปในยุคกลาง การถูกนำมาใช้ครั้งแรกเป็นดาบแห่งยุคการย้ายถิ่นฐาน และเฉพาะในยุคสมัยกลางยุครุ่งโรจน์เท่านั้น ที่ได้ถูกพัฒนาเป็นดาบอาวุธคลาสสิกพร้อมกับครอสการ์ด คำว่า sword ยังคงเป็นภาษาอังกฤษแบบเก่า คำว่า sweord
           </div>
+          <div class="clickme" id="clickmeSword">เลือกทีมที่คุณคิดว่าจะชนะ</div>
+          <div class="btn-l" id="swordBtn_L"><button class="btn" onclick="chooseTeam(1)">ทีมที่ 1</button></div>
+          <div class="btn-r" id="swordBtn_R"><button class="btn" onclick="chooseTeam(2)">ทีมที่ 2</button></div>
           <div class="swordLeft">
-            <img src="pic/sword/sword-left.png" width="100%">
+            <img src="pic/sword/sword-right.png" width="100%" id="sword_L">
           </div>
           <div class="swordRight">
-            <img src="pic/sword/sword-right.png" width="100%">
+            <img src="pic/sword/sword-right.png" width="100%" id="sword_R">
           </div>
           <div class="peopleLeft">
             <img src="pic/sword/crowded-people-left.png" width="100%">
@@ -115,7 +119,10 @@
           <div class="peopleRight">
             <img src="pic/sword/crowded-people-right.png" width="100%">
           </div>
-          <div class="light">
+          <div class="lightLeft">
+            <img src="pic/sword/light.png" width="100%">
+          </div>
+          <div class="lightRight">
             <img src="pic/sword/light.png" width="100%">
           </div>
             

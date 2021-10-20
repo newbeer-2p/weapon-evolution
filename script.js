@@ -6,8 +6,7 @@ let pageno = 0;
 
 document.body.onscroll = function(){
   let scrollY = window.scrollY;
-  
-  
+
   if (pageno+1 < pages.length && scrollY >= 520*(pageno+1)){
       pageno++;
     }
@@ -16,8 +15,10 @@ document.body.onscroll = function(){
     }
     pages.forEach((page) => {
       page.dataset.show = "0";
+      page.style.zIndex = "0"
     })
     pages[pageno].dataset.show = "1";
+    pages[pageno].style.zIndex = "3";
   document.body.style.setProperty("--ch", pageno);
   document.body.style.setProperty("--sy", scrollY);
 
@@ -43,6 +44,7 @@ function goTo(y){
 }
 
 let playing = false;
+let swordPlaying = false;
 
 function play(event){
   if (!playing){
@@ -90,7 +92,87 @@ function play(event){
         spash.style.animation = "none";
         playing = false;
         document.querySelectorAll(".clickme")[1].style.opacity = ".5";
-      }, 3000)
+      }, 2500)
+    }
+    else if (pageno == 3){
+
+    }
+    else if (pageno == 4){
+      let btn_l = document.querySelector("#swordBtn_L");
+      let btn_r = document.querySelector("#swordBtn_R");
+      let sword_l = document.querySelectorAll(".swordLeft")[0];
+      let sword_r = document.querySelectorAll(".swordRight")[0];
+      let sword_l_img = document.querySelector("#sword_L");
+      let sword_r_img = document.querySelector("#sword_R");
+      let light_l = document.querySelectorAll(".lightLeft")[0];
+      let light_r = document.querySelectorAll(".lightRight")[0];
+
+      if (swordPlaying) {  
+        btn_l.style.display = "block";
+        btn_r.style.display = "block";
+        sword_l_img.src = "pic/sword/sword-right.png";
+        sword_l.style.width = "400px";
+        sword_l.style.left = "10%";
+        sword_l.style.transform = "scaleX(-1)";
+        sword_r_img.src = "pic/sword/sword-right.png";
+        sword_r.style.width = "400px";
+        sword_r.style.right = "10%";
+        sword_r.style.transform = "none";
+        light_l.style.left = "10vw";
+        light_l.style.opacity = "1";
+        light_r.style.right = "10vw";
+        light_r.style.opacity = "0";
+        
+        document.querySelectorAll(".clickme")[3].innerHTML = "เลือกทีมที่คุณคิดว่าจะชนะ"
+        swordPlaying = false;
+      }
     }
   }
+}
+
+function chooseTeam(team){
+  let btn_l = document.querySelector("#swordBtn_L");
+  let btn_r = document.querySelector("#swordBtn_R");
+  let sword_l = document.querySelectorAll(".swordLeft")[0];
+  let sword_r = document.querySelectorAll(".swordRight")[0];
+  let sword_l_img = document.querySelector("#sword_L");
+  let sword_r_img = document.querySelector("#sword_R");
+  let light_l = document.querySelectorAll(".lightLeft")[0];
+  let light_r = document.querySelectorAll(".lightRight")[0];
+
+  if (team == 1){
+    btn_r.style.display = "none";
+  }
+  else{
+    btn_l.style.display = "none";
+  }
+
+  document.querySelectorAll(".swordContent")[0].style.opacity = "1"
+  let rand_win = parseInt(Math.random() * 2 +1);
+  if (rand_win == 1){
+    sword_l_img.src = "pic/sword/sword-left.png";
+    sword_l.style.width = "700px";
+    sword_l.style.left = "40vw";
+    sword_l.style.transform = "none";
+    light_l.style.opacity = "1";
+    light_l.style.left = "30vw";
+  }
+  else{
+    sword_r_img.src = "pic/sword/sword-left.png";
+    sword_r.style.width = "700px";
+    sword_r.style.right = "40vw";
+    sword_r.style.transform = "scaleX(-1)";
+    light_r.style.opacity = "1";
+    light_r.style.right = "30vw";
+    light_l.style.opacity = "0";
+  }
+  if (rand_win == team){
+    document.querySelectorAll(".clickme")[3].innerHTML = `คุณชนะ<div>ทีมที่ ${rand_win} ชนะ</div><br>คลิกเพื่อเริ่มใหม่`
+  }
+  else {
+    document.querySelectorAll(".clickme")[3].innerHTML = `คุณแพ้<div>ทีมที่ ${rand_win} ชนะ</div><br>คลิกเพื่อเริ่มใหม่`
+  }
+  window.setTimeout(function(){
+    swordPlaying = true
+  }, 500)
 }
