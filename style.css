@@ -99,7 +99,6 @@ body {
   height: 100%;
   transition: all 1s;
   position: fixed;
-  opacity: 0;
   background: hsl(calc(var(--ch)/var(--pg)*360), 100%, 50%);
   scroll-snap-align: start;
 }
@@ -110,12 +109,12 @@ body {
 
 .page>*{
   position: absolute;
-  transition: 1s;
+  transition: all 1s;
   
 }
 
-.page[data-show = "1"]{
-  opacity: 1;
+.page[data-show = "0"]{
+  opacity: 0;
 }
 
 .tr{
@@ -137,7 +136,7 @@ body {
   transform: translateY(-20px);
 }
 
-.clickme {
+.clickme, .clickme-down {
   font-size: 65px;
   text-align: center;
   width: 100vw;
@@ -146,6 +145,10 @@ body {
   opacity: .5;
   z-index: 30;
   transition: .5s;
+}
+
+.clickme-down {
+  top: 80%;
 }
 
 /* Home */
@@ -242,6 +245,8 @@ body {
   /* animation: leavesFall 4s 2s infinite linear; */
 }
 
+/* Spear Page */
+
 #spear{
   background: url("pic/spear/background.png");
   background-position: bottom;
@@ -254,37 +259,38 @@ body {
   right: 0;
 }
 
-/* Spear Page */
-
 #spear .content{
   top: 0;
   padding: 50px;
   font-size: 24px;
+  opacity: 0;
 }
 
-#spear .fish{
+.fish{
   width: 300px;
   bottom: -20px;
   left: 50%;
-  animation: fishmove 2s infinite linear;
+  opacity: 0;
+  transition: left 0s;
+  /* animation: fishmove 2s infinite linear; */
 }
 
-#spear .spash{
+.spash{
   width: 300px;
   bottom: -20px;
   left: 50%;
+  opacity: 0;
+  transition: left 0s;
 }
 
-#spear #s1{
-  animation: spash 2s 2s infinite linear;
-}
-
-#spear #spearTool {
+#spearTool {
   width: 300px;
   left: 100%;
-  bottom: 80%;
-  animation: spearMove 2s 1s infinite linear;
+  bottom: 100%;
+  /* animation: spearMove 2s 1s infinite linear; */
 }
+
+
 
 /* Bow Page */
 
@@ -422,6 +428,9 @@ body {
   }
 }
 @keyframes spash{
+  from{
+    opacity: 1;
+  }
   to{
     opacity: 0;
     transform: scale(2);
@@ -434,6 +443,10 @@ body {
     opacity: 0;
   }
   50% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  100% {
     transform: translateY(0px);
     opacity: 1;
   }

@@ -26,7 +26,7 @@
     </div>
     <div class="progessbar"></div>
   </div>
-    <div id="canvas" onclick="play()">
+    <div id="canvas" onclick="play(event)">
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
         </style>
@@ -68,7 +68,8 @@
         </div>
         
         <div class="page" id="spear" data-show="0">
-          <div class="text content">
+          <div class="clickme clickme-down">คลิกพื้นที่เพื่อจับปลา</div>
+          <div class="text content" id="spearContent">
             <h1>หอก ( 300,000 BC )</h1>
             ในยุคแรก ๆ พบหอกเป็นเพียงไม้แหลม ต่อมาพบหอกส่วนมากเป็นหินปลายแหลม นำมาผูกติดกับท่อนไม้ ซึ่งซึ่งจะพบในยุคหินเก่า ในขณะที่ในยุคหินใหม่นั้นจะมีการเหลาปลายหอกให้แหลมขึ้น ส่วนใหญ่ใช้ในการล่าสัตว์
           </div>

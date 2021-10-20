@@ -44,9 +44,9 @@ function goTo(y){
 
 let playing = false;
 
-function play(){
+function play(event){
   if (!playing){
-  if (pageno == 1){
+    if (pageno == 1){
       document.querySelectorAll(".axeContent")[0].style.opacity = "1";
       document.querySelector("#axeTool").style.animation = "axeMove 2s infinite alternate,axeSpin 2s infinite linear alternate";
       document.querySelectorAll(".leaves")[0].style.animation = "leavesFall 4s 2s infinite linear";
@@ -58,6 +58,39 @@ function play(){
         document.querySelectorAll(".leaves")[0].style.animation = "none";
         playing = false;
       }, 4000);
+    }
+    else if (pageno == 2){
+      let cX = event.clientX;
+      let cY = event.clientY-300;
+      let spearTool = document.querySelector("#spearTool")
+      let fish = document.querySelectorAll(".fish")[0]
+      let spash = document.querySelectorAll(".spash")[0]
+      
+      document.querySelector("#spearContent").style.opacity = "1";
+      document.querySelectorAll(".clickme")[1].style.opacity = "0"
+      spearTool.animate([
+        { left: `100%`, bottom: `100%` }, 
+        { left: `${cX}px`, bottom: `130px` },
+        { left: `${cX}px`, bottom: `130px` }
+      ], { 
+        duration: 1000
+      });
+      window.setTimeout(function() {
+        spearTool.style.left = `${cX}px`;
+        spearTool.style.bottom = `130px`;
+        fish.style.opacity = "1";
+        fish.style.left = `${cX-100}px`;
+        spash.style.left = `${cX-100}px`;
+      }, 500)
+      fish.style.animation = "fishmove 2s .5s linear";
+      spash.style.animation = "spash 2s .5s linear";
+      playing = true;
+      window.setTimeout(function(){
+        fish.style.animation = "none";
+        spash.style.animation = "none";
+        playing = false;
+        document.querySelectorAll(".clickme")[1].style.opacity = ".5";
+      }, 3000)
     }
   }
 }
