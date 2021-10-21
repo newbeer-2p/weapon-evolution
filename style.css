@@ -441,7 +441,30 @@ button:hover{
   right: 35%;
   bottom: 40%;
 }
-
+#bazooka{
+  background: url("pic/bazooka/bazukascene.png");
+  background-position: bottom;
+  background-size: cover;
+}
+.bomb-shooter{
+  bottom: 0%;
+  left: 12%;
+}
+.big-smoke{
+  left: 25%;
+}
+#atomicBomb{
+  background: url("pic/helicopter/helicopterascene.png");
+  background-position: bottom;
+  background-size: cover;
+}
+.heliRight{
+  left: 60%;
+}
+.heliLeft{
+  left: 5%;
+  top: 5%;
+}
 /* Animations */
 
 @keyframes staring{
