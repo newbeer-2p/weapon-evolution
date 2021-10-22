@@ -434,12 +434,16 @@ button:hover{
   font-size: 24px;
 }
 .cannonTool{
-  bottom: 0%;
-  right: 55%;
+  bottom: 0;
+  left: 50px;
+  z-index: 1;
+  animation: cannon 1s infinite linear;
 }
 .cannonAmmo{
-  right: 35%;
-  bottom: 40%;
+  width: 250px;
+  left: 400px;
+  bottom: 30vh;
+  animation: shootBomb 1s infinite linear;
 }
 #bazooka{
   background: url("pic/bazooka/bazukascene.png");
@@ -550,5 +554,20 @@ button:hover{
   }
   to {
     transform: translate(0px, 25px)
+  }
+}
+@keyframes shootBomb{
+  to{
+    bottom: 100%;
+    left: 100%;
+    transform: rotate(240deg);
+  }
+}
+@keyframes cannon{
+  30%{
+    transform: translateX(-10px) rotateZ(-3deg);
+  }
+  50%{
+    transform: translateX(0);
   }
 }
