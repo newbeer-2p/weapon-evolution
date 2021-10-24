@@ -135,7 +135,11 @@ button:hover{
 .text{
   transform: translateY(50px);
   z-index: 5;
-  /* text-shadow: 1px 1px 4px hsl(0, 100%, 100%); */
+  /* text-shadow: 1px 1px 8px hsl(0, 100%, 100%); */
+}
+
+.text[data-show="0"]{
+  opacity: 0;
 }
 
 .page[data-show="1"] .text{
@@ -156,6 +160,10 @@ button:hover{
   opacity: .5;
   z-index: 5;
   transition: .5s;
+}
+
+:where(.clickme, .clickme-down)[data-show="0"]{
+  opacity: 0;
 }
 
 .clickme-down {
@@ -239,25 +247,30 @@ button:hover{
   height: 450px;
   bottom: 0;
   background:none;
-  
-  /* animation: axeMove 2s infinite linear alternate,axeSpin 2s infinite linear alternate; */
   animation: none;
   transform: rotate(-50deg) scale(2);
 }
-#axe .axeContent{
+
+#axe .box[data-play="1"]{
+  animation: axeMove 2s infinite linear alternate,axeSpin 2s infinite linear alternate;
+}
+
+.axeContent{
   position:fixed;
   bottom: 0;
   padding: 50px;
   font-size: 24px;
-  opacity: 0;
 }
 
-#axe .leaves {
+.leaves {
   right: 100px;
   top: -300px;
   animation: none;
   opacity: 0;
-  /* animation: leavesFall 4s 2s infinite linear; */
+}
+
+.leaves[data-play="1"]{
+  animation: leavesFall 4s 2s infinite linear;
 }
 
 /* Spear Page */
@@ -278,7 +291,6 @@ button:hover{
   top: 0;
   padding: 50px;
   font-size: 24px;
-  opacity: 0;
 }
 
 .fish{
@@ -437,12 +449,16 @@ button:hover{
   bottom: 0;
   left: 50px;
   z-index: 1;
+}
+.cannonTool[data-play="1"]{
   animation: cannon 1s infinite linear;
 }
 .cannonAmmo{
   width: 250px;
   left: 400px;
-  bottom: 30vh;
+  bottom: 225px;
+}
+.cannonAmmo[data-play="1"]{
   animation: shootBomb 1s infinite linear;
 }
 #bazooka{

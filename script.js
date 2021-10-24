@@ -49,27 +49,34 @@ let swordPlaying = false;
 function play(event){
   if (!playing){
     if (pageno == 1){
-      document.querySelectorAll(".axeContent")[0].style.opacity = "1";
-      document.querySelector("#axeTool").style.animation = "axeMove 2s infinite alternate,axeSpin 2s infinite linear alternate";
-      document.querySelectorAll(".leaves")[0].style.animation = "leavesFall 4s 2s infinite linear";
-      document.querySelectorAll(".clickme")[0].style.opacity = "0"
+      let content = document.querySelectorAll(".axeContent")[0];
+      let axeTool = document.querySelector("#axeTool");
+      let leaves = document.querySelectorAll(".leaves")[0];
+      let clickme = document.querySelectorAll(".clickme")[0];
+
+      content.dataset.show = "1";
+      axeTool.dataset.play = "1";
+      leaves.dataset.play = "1";
+      clickme.dataset.show = "0"
       playing = true;
       window.setTimeout(function() {
-        document.querySelectorAll(".clickme")[0].style.opacity = ".5";
-        document.querySelector("#axeTool").style.animation = "none";
-        document.querySelectorAll(".leaves")[0].style.animation = "none";
+        axeTool.dataset.play = "0";
+        leaves.dataset.play = "0";
+        clickme.dataset.show = "1"
         playing = false;
       }, 4000);
     }
     else if (pageno == 2){
       let cX = event.clientX;
       let cY = event.clientY-300;
-      let spearTool = document.querySelector("#spearTool")
-      let fish = document.querySelectorAll(".fish")[0]
-      let spash = document.querySelectorAll(".spash")[0]
+      let spearTool = document.querySelector("#spearTool");
+      let content = document.querySelector("#spearContent");
+      let fish = document.querySelectorAll(".fish")[0];
+      let spash = document.querySelectorAll(".spash")[0];
+      let clickme = document.querySelectorAll(".clickme")[1];
       
-      document.querySelector("#spearContent").style.opacity = "1";
-      document.querySelectorAll(".clickme")[1].style.opacity = "0"
+      content.dataset.show = "1";
+      clickme.dataset.show = "0"
       spearTool.animate([
         { left: `100%`, bottom: `100%` }, 
         { left: `${cX}px`, bottom: `130px` },
@@ -91,7 +98,7 @@ function play(event){
         fish.style.animation = "none";
         spash.style.animation = "none";
         playing = false;
-        document.querySelectorAll(".clickme")[1].style.opacity = ".5";
+        clickme.dataset.show = "1";
       }, 2500)
     }
     else if (pageno == 3){
@@ -126,6 +133,25 @@ function play(event){
         document.querySelectorAll(".clickme")[3].innerHTML = "เลือกทีมที่คุณคิดว่าจะชนะ"
         swordPlaying = false;
       }
+    }
+    else if (pageno == 5){
+      let cannonTool = document.querySelectorAll(".cannonTool")[0];
+      let cannonAmmo = document.querySelectorAll(".cannonAmmo")[0];
+      let clickme = document.querySelectorAll(".clickme")[4];
+      let content = document.querySelectorAll(".cannonContent")[0];
+
+      clickme.dataset.show = "0";
+      cannonTool.dataset.play = "1";
+      cannonAmmo.dataset.play = "1";
+      content.dataset.show = "1";
+
+      playing = true;
+      window.setTimeout(()=>{
+        clickme.dataset.show = "1";
+        cannonTool.dataset.play = "0";
+        cannonAmmo.dataset.play = "0";
+        playing = false;
+      }, 1000)
     }
   }
 }
