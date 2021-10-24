@@ -461,6 +461,34 @@ button:hover{
 .cannonAmmo[data-play="1"]{
   animation: shootBomb 1s infinite linear;
 }
+#gun{
+  background: url("pic/gun/gunscene.png");
+  background-position: bottom;
+  background-size: cover;
+}
+#gun .gunContent{
+  position:fixed;
+  bottom: 0;
+  padding: 50px;
+  font-size: 24px;
+}
+.gunner{
+  bottom: 0px;
+  left: 0px;
+  z-index: 0;
+}
+.gunner-arm{
+  bottom: 0px;
+  left: 0px;
+  z-index: 1;
+  position: auto;
+}
+.muzzlesmoke{
+  top:230px;
+  left: 1470px;
+  z-index: 1;
+}
+
 #bazooka{
   background: url("pic/bazooka/bazukascene.png");
   background-position: bottom;
@@ -484,6 +512,11 @@ button:hover{
 .heliLeft{
   left: 5%;
   top: 5%;
+}
+#Cyber{
+  background: url("pic/bazooka/bazukascene.png");
+  background-position: bottom;
+  background-size: cover;
 }
 /* Animations */
 
