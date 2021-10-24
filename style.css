@@ -524,12 +524,21 @@ button:hover{
   background-position: bottom;
   background-size: cover;
 }
+#atomicBomb .nuclearContent{
+  position:fixed;
+  bottom: 0;
+  padding: 50px;
+  font-size: 24px;
+}
+
 .heliRight{
   left: 60%;
+  animation: heliRightFly 4s infinite linear;
 }
 .heliLeft{
   left: 5%;
   top: 5%;
+  animation: heliLeftFly 4s infinite linear;
 }
 #Cyber{
   background: url("pic/cyber/cyberscene.png");
@@ -726,6 +735,25 @@ button:hover{
     opacity: 1;
   }
 }
+
+@keyframes heliRightFly{
+  from{
+    transform: translateX(0px);
+  }
+  to{
+    transform: translateX(-1600px);
+  }
+}
+
+@keyframes heliLeftFly{
+  from{
+    transform: translateX(0px);
+  }
+  to{
+    transform: translateX(1800px);
+  }
+}
+
 @keyframes emote {
   from{
     bottom: 250px;
