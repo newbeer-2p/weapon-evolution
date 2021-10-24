@@ -537,12 +537,9 @@ button:hover{
   background-size: cover;
 }
 .cyber-arm{
-  bottom: 55px;
-  left: 795px;
+  bottom: 0px;
+  left: 0px;
   z-index: 2;
-}
-.cyber-s{
-  height: 500px;
 }
 .emote{
   /*bottom: 250px;
