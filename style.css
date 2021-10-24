@@ -501,6 +501,10 @@ button:hover{
 .big-smoke{
   left: 25%;
 }
+.effect{
+  bottom: 45%;
+  left: 44%;
+}
 #atomicBomb{
   background: url("pic/helicopter/helicopterascene.png");
   background-position: bottom;
