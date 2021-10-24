@@ -538,15 +538,27 @@ button:hover{
   background-size: cover;
 }
 .flying-drone{
-  /*top: 50px;*/
-  left:calc(var(--i)*300px) ;
+  width: calc( var(--s) * 20px);
+  left:calc(100px + var(--i)*300px) ;
   animation: dronefly 1s calc(var(--i)*0.2s) infinite alternate;
 }
-.test{
-  animation: dronespin 1s calc(var(--i)*0.2s) infinite linear;
+.flying-drones{
+  animation: droneflies 2s infinite alternate;
+  opacity: .5;
+  left: 50px;
 }
-.test:hover{
+.flying-right{
+  right: 50px;
+  animation: droneflies 2s 3s infinite alternate;
+  transform: scaleX(-1);
+}
+
+.drones-img{
+  width: 100%;
+}
+.drones-img:hover{
   animation: dronespin 0.1s infinite linear;
+  cursor: pointer;
 }
 .flying-drones{
   top: 50px;
@@ -673,6 +685,12 @@ button:hover{
     transform: rotate(360deg);
   }
 }
+@keyframes droneflies {
+  to{
+    top: 100px;
+  }
+}
+
 @keyframes dronefly {
   from{
     top: 50px;
