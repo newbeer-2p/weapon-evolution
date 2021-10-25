@@ -176,7 +176,12 @@ function play(event){
       }, 1000)
     }
     else if (pageno == 7){
+      let content = document.querySelectorAll(".bazookaContent")[0];
 
+      content.dataset.show = "1";
+      playing = true;
+
+      
     }
     else if (pageno == 8){
 
