@@ -568,6 +568,12 @@ button:hover{
   left: 0px;
   z-index: 2;
 }
+#Cyber .CyberContent{
+  position:fixed;
+  bottom: 0;
+  padding: 50px;
+  font-size: 24px;
+}
 .emote{
   /*bottom: 250px;
   left: 120px;*/
