@@ -207,31 +207,10 @@ function play(event){
         playing = false;
       }, 1000)
     }
-    else if (pageno == 8){
-      let content = document.querySelectorAll(".CyberContent")[0];
-
-      content.dataset.show = "1";
-      playing = true;
-
-      
-    }
     else if (pageno == 9){
       let content = document.querySelectorAll(".droneContent")[0];
 
       content.dataset.show = "1";
-      playing = true;
-    }
-    else if (pageno == 10){
-      // let clickme = document.querySelectorAll(".clickme")[9];
-      // let drones = document.querySelectorAll(".flying-drone");
-
-      // let drones_all_destroy = false;
-      // drones.forEach((drone)=>{
-      //   if (drone.dataset.destroyed == "1"){
-      //     drones_all_destroy = true;
-      //     clickme.innerHTML = "คลิกเพื่อรีเซ็ท"
-      //   }
-      // })
     }
   }
 }
@@ -343,4 +322,11 @@ function login(){
     text[0].dataset.show = "0";
     text[1].dataset.show = "0";
   }, 2000)
+}
+
+function catchFire(el){
+  let content = document.querySelectorAll(".atomicContent")[0];
+
+  content.dataset.show = "1"
+  el.dataset.show = "0"
 }

@@ -135,7 +135,13 @@ button:hover{
 .text{
   transform: translateY(50px);
   z-index: 5;
-  /* text-shadow: 1px 1px 8px hsl(0, 100%, 100%); */
+  margin: 10px 50px;
+  padding: 30px;
+  background: hsl(0, 100%, 100%, .5);
+  font-size: 20px;
+  border-radius: 25px;
+  width: 500px;
+  right: 0;
 }
 
 .text[data-show="0"]{
@@ -146,7 +152,7 @@ button:hover{
   transform: translateY(0px);
 }
 
-.page .text div {
+.page .text-topic div {
   font-size: calc(100vw / 35);
   transform: translateY(-20px);
 }
@@ -186,7 +192,7 @@ button:hover{
   background-size: cover;
 }
 
-#topic .text{
+#topic .text-topic{
   font-size: calc(100vw / 15);
 }
 
@@ -258,8 +264,6 @@ button:hover{
 .axeContent{
   position:fixed;
   bottom: 0;
-  padding: 50px;
-  font-size: 24px;
 }
 
 .leaves {
@@ -289,8 +293,6 @@ button:hover{
 
 #spear .content{
   top: 0;
-  padding: 50px;
-  font-size: 24px;
 }
 
 #glassL{
@@ -341,8 +343,6 @@ button:hover{
 #bow .bowContent{
   position:fixed;
   bottom: 0;
-  padding: 50px;
-  font-size: 24px;
 }
 
 .archer{
@@ -378,11 +378,9 @@ button:hover{
   background-size: cover;
 }
 #sword .swordContent{
-  position:fixed;
+  position:flex;
   bottom: 0;
-  padding: 50px;
-  font-size: 24px;
-  opacity: 0;
+  width: fit-content;
 }
 
 .swordLeft > img, .swordRight > img{
@@ -470,8 +468,6 @@ button:hover{
 #cannon .cannonContent{
   position:fixed;
   bottom: 0;
-  padding: 50px;
-  font-size: 24px;
 }
 .cannonTool{
   bottom: 0;
@@ -497,8 +493,6 @@ button:hover{
 #gun .gunContent{
   position:fixed;
   bottom: 0;
-  padding: 50px;
-  font-size: 24px;
 }
 .gunner{
   bottom: 0px;
@@ -534,11 +528,12 @@ button:hover{
   background-position: bottom;
   background-size: cover;
 }
+#bazooka > .clickme {
+  top: 50px;
+}
 #bazooka .bazookaContent{
   position:fixed;
   bottom: 0;
-  padding: 50px;
-  font-size: 24px;
 }
 .bazooka-shooter{
   width: 90vw;
@@ -571,8 +566,6 @@ button:hover{
 #atomicbomb .atomicContent{
   position:fixed;
   bottom: 0;
-  padding: 50px;
-  font-size: 24px;
 }
 
 .heliRight{
@@ -616,6 +609,18 @@ button:hover{
   animation: bigfire .5s 1s infinite linear alternate;
 }
 
+.fire{
+  z-index: 7;
+}
+
+.fire:hover{
+  cursor: pointer;
+}
+
+.fire[data-show="0"]{
+  display: none;
+}
+
 #Cyber{
   background: url("pic/cyber/cyberscene.png");
   background-position: bottom;
@@ -630,8 +635,6 @@ button:hover{
 #Cyber .CyberContent{
   position:fixed;
   bottom: 0;
-  padding: 50px;
-  font-size: 24px;
 }
 .emote{
   /*bottom: 250px;
@@ -723,8 +726,7 @@ button:hover{
 #drone .droneContent{
   position:fixed;
   bottom: 0;
-  padding: 50px;
-  font-size: 24px;
+  width: fit-content;
 }
 
 .drones-img{
