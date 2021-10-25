@@ -511,13 +511,14 @@ button:hover{
 }
 
 .muzzlesmoke{
-  top:230px;
-  left: 1470px;
+  bottom:55vh;
+  left: 80vw;
   z-index: 1;
   opacity: 0;
+
 }
 .muzzlesmoke[data-play="1"]{
-  animation: armshoot 1s infinite linear;
+  animation: smoke 1s infinite linear;
 }
 
 #bazooka{
