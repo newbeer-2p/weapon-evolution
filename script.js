@@ -153,6 +153,49 @@ function play(event){
         playing = false;
       }, 1000)
     }
+    else if (pageno == 6){
+      let content = document.querySelectorAll(".gunContent")[0];
+      let gunner = document.querySelectorAll(".gunner")[0];
+      let muzzlesmoke = document.querySelectorAll(".muzzlesmoke")[0];
+      let gunner_arm = document.querySelectorAll(".gunner-arm")[0];
+      let clickme = document.querySelectorAll(".clickme")[5];
+
+      content.dataset.show = "1";
+      gunner.dataset.play = "1";
+      muzzlesmoke.dataset.play = "1";
+      gunner_arm.dataset.play = "1";
+      clickme.dataset.show = "0";
+      playing = true;
+
+      window.setTimeout(()=>{
+        gunner.dataset.play = "0";
+        muzzlesmoke.dataset.play = "0";
+        gunner_arm.dataset.play = "0";
+        clickme.dataset.show = "1";
+        playing = false;
+      }, 1000)
+    }
+    else if (pageno == 7){
+
+    }
+    else if (pageno == 8){
+
+    }
+    else if (pageno == 9){
+
+    }
+    else if (pageno == 10){
+      // let clickme = document.querySelectorAll(".clickme")[9];
+      // let drones = document.querySelectorAll(".flying-drone");
+
+      // let drones_all_destroy = false;
+      // drones.forEach((drone)=>{
+      //   if (drone.dataset.destroyed == "1"){
+      //     drones_all_destroy = true;
+      //     clickme.innerHTML = "คลิกเพื่อรีเซ็ท"
+      //   }
+      // })
+    }
   }
 }
 
@@ -201,4 +244,24 @@ function chooseTeam(team){
   window.setTimeout(function(){
     swordPlaying = true
   }, 500)
+}
+
+function shootDrone(no){
+  let content = document.querySelectorAll(".droneContent")[0];
+  let btn = document.querySelectorAll(".btn-reset")[0];
+  let drone = document.querySelectorAll(".flying-drone")[no];
+
+  drone.dataset.destroyed = "1";
+  content.dataset.show = "1";
+  btn.dataset.show = "1";
+}
+
+function resetDrone(){
+  let drones = document.querySelectorAll(".flying-drone");
+  let btn = document.querySelectorAll(".btn-reset")[0];
+
+  drones.forEach((drone)=>{
+    drone.dataset.destroyed = "0";
+  })
+  btn.dataset.show = "0";
 }

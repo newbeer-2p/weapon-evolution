@@ -485,13 +485,17 @@ button:hover{
   bottom: 0px;
   left: 0px;
   z-index: 0;
-  animation: humanshoot 1s  infinite linear ;
+}
+.gunner[data-play="1"]{
+  animation: humanshoot 1s infinite linear;
 }
 .gunner-arm{
   bottom: 0px;
   left: 0px;
   z-index: 1;
   position: auto;
+}
+.gunner-arm[data-play="1"]{
   animation: armshoot 1s infinite linear;
 }
 
@@ -500,7 +504,9 @@ button:hover{
   left: 1470px;
   z-index: 1;
   opacity: 0;
-  animation: smoke 1s infinite linear;
+}
+.muzzlesmoke[data-play="1"]{
+  animation: armshoot 1s infinite linear;
 }
 
 #bazooka{
@@ -519,7 +525,7 @@ button:hover{
   bottom: 45%;
   left: 44%;
 }
-#atomicBomb{
+#helicopter{
   background: url("pic/helicopter/helicopterascene.png");
   background-position: bottom;
   background-size: cover;
@@ -546,12 +552,9 @@ button:hover{
   background-size: cover;
 }
 .cyber-arm{
-  bottom: 55px;
-  left: 795px;
+  bottom: 0px;
+  left: 0px;
   z-index: 2;
-}
-.cyber-s{
-  height: 500px;
 }
 .emote{
   /*bottom: 250px;
@@ -565,9 +568,15 @@ button:hover{
   background-size: cover;
 }
 .flying-drone{
+  top: 150px;
   width: calc( var(--s) * 20px);
   left:calc(100px + var(--i)*300px) ;
   animation: dronefly 1s calc(var(--i)*0.2s) infinite alternate;
+  transition: all 5s;
+}
+.flying-drone[data-destroyed="1"]{
+  transform: translateY(100vh);
+  animation: droneDestroyed .5s infinite linear;
 }
 .flying-drones{
   animation: droneflies 2s infinite alternate;
@@ -575,9 +584,9 @@ button:hover{
   left: 50px;
 }
 .flying-right{
-  right: 50px;
+  left: 800px;
   animation: droneflies 2s 3s infinite alternate;
-  transform: scaleX(-1);
+  transform: scale(.75);
 }
 
 .drones-img{
@@ -590,7 +599,24 @@ button:hover{
 .flying-drones{
   top: 50px;
 }
-/*นิวเบียเพื่อน กูอยากได้แบบ คลอกล้ะโดรน ระเบิด ร่วงหายไปอะ*/
+
+#clickmeDrone{
+  top: 60vh;
+}
+
+.btn-reset{
+  right: 20px;
+  top: 20px;
+}
+.btn-reset[data-show="0"]{
+  opacity: 0;
+}
+
+.btn-reset > button {
+  background: red;
+  color: white;
+  padding: 10px 20px;
+}
 
 /* Animations */
 
@@ -783,6 +809,6 @@ button:hover{
     top: 50px;
   }
   to{
-    top: 250px;
+    top: 200px;
   }
 }
