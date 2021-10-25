@@ -181,6 +181,9 @@ function play(event){
       content.dataset.show = "1";
       playing = true;
 
+      window.setTimeout(()=>{
+        playing = false;
+      }, 1000)
       
     }
     else if (pageno == 8){
