@@ -656,11 +656,15 @@ button:hover{
 .btn-login{
   height: 80px;
 }
+.btn-end>button{
+  font-size: 80px;
+}
 .btn-login>button{
   padding: 10px 20px;
   margin-top: 20px;
   float: right;
 }
+
 .login-text{
   font-size: 24px;
   float: right;
@@ -750,13 +754,116 @@ button:hover{
   padding: 10px 20px;
 }
 .end{
-  font-size: 40px;
+  font-size: calc(100vw / 50);
   color: #000000;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
+#end01,#end03{
+  background-image: linear-gradient(white, black);
+}
+#end02{
+  background: url("pic/axe/background.png");
+  background-position: bottom;
+  background-size: cover;
+}
+#end04{
+  background: url("pic/helicopter/helicopterascene.png");
+  background-position: bottom;
+  background-size: cover;
+}
+#end05{
+  background: url("pic/topic/background.png");
+  background-position: bottom;
+  background-size: cover;
+}
+#end06{
+  background: url("pic/spear/background.png");
+  background-position: bottom;
+  background-size: cover;
+}
+.credit{
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  text-align: right;
+  margin-right: 20px;
+  padding: 10px;
+  background-color: rgb(255,255,255,0.5);
+  border-radius: 25px;
+}
+
+#droneend{
+  position: fixed;
+  right: 10vw;
+  top: 10vh;
+  width: 25vw;
+}
+#p-leftend{
+  position: fixed;
+  right: 30vw;
+  bottom: -1vh;
+  width: 20vw;
+}
+#p-rightend{
+  position: fixed;
+  right: 10vw;
+  bottom: -1vh;
+  width: 20vw;
+}
+#spearend{
+  position: fixed;
+  left: 10vw;
+  bottom: -5vh;
+  width: 20vw;
+}
+#spearend2{
+  position: fixed;
+  left: 15vw;
+  bottom: -5vh;
+  width: 20vw;
+}
+#spearend3{
+  position: fixed;
+  left: 20vw;
+  bottom: -5vh;
+  width: 20vw;
+}
+#spearfish1{
+  transform: rotate(140deg);
+  bottom: 0;
+  width: 20vw;
+  left: 10vw;
+}
+#spearfish2{
+  transform: rotate(130deg);
+  bottom: 0;
+  width: 20vw;
+  left: 5vw;
+}
+#spearfish3{
+  transform: rotate(135deg);
+  bottom: -5vh;
+  width: 20vw;
+  left: 0;
+}
+#fishend1{
+  width: 20vw;
+  left: 0;
+}
+#fishend2{
+  width: 20vw;
+  left: 10vw;
+}
+#fishend3{
+  width: 20vw;
+  left: 20vw;
+}
+
+
+
 
 /* Animations */
 
