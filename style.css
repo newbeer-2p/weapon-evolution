@@ -525,12 +525,12 @@ button:hover{
   bottom: 45%;
   left: 44%;
 }
-#helicopter{
+#atomicbomb{
   background: url("pic/helicopter/helicopterascene.png");
   background-position: bottom;
   background-size: cover;
 }
-#atomicBomb .nuclearContent{
+#atomicbomb .atomicContent{
   position:fixed;
   bottom: 0;
   padding: 50px;
@@ -546,6 +546,12 @@ button:hover{
   top: 5%;
   animation: heliLeftFly 4s infinite linear;
 }
+
+.heli-bigsmoke{
+  animation: helismoke 2s 1s infinite linear;
+  opacity: 0;
+}
+
 #Cyber{
   background: url("pic/cyber/cyberscene.png");
   background-position: bottom;
@@ -762,18 +768,29 @@ button:hover{
   }
 }
 
+@keyframes helismoke{
+  0%{
+    opacity: 0;
+  }
+
+  25%{
+    opacity: 1;
+  }
+}
+
+
 @keyframes heliRightFly{
   from{
-    transform: translateX(0px);
+    transform: translateX(1000px);
   }
   to{
-    transform: translateX(-1600px);
+    transform: translateX(-1800px);
   }
 }
 
 @keyframes heliLeftFly{
   from{
-    transform: translateX(0px);
+    transform: translateX(-1000px);
   }
   to{
     transform: translateX(1800px);
