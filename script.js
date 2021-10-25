@@ -133,11 +133,9 @@ function play(event){
         btn_l.style.display = "block";
         btn_r.style.display = "block";
         sword_l_img.src = "pic/sword/sword-right.png";
-        sword_l.style.width = "400px";
         sword_l.style.left = "10%";
         sword_l.style.transform = "scaleX(-1)";
         sword_r_img.src = "pic/sword/sword-right.png";
-        sword_r.style.width = "400px";
         sword_r.style.right = "10%";
         sword_r.style.transform = "none";
         light_l.style.left = "10vw";
@@ -236,7 +234,6 @@ function chooseTeam(team){
   let rand_win = parseInt(Math.random() * 2 +1);
   if (rand_win == 1){
     sword_l_img.src = "pic/sword/sword-left.png";
-    sword_l.style.width = "700px";
     sword_l.style.left = "40vw";
     sword_l.style.transform = "none";
     light_l.style.opacity = "1";
@@ -244,7 +241,6 @@ function chooseTeam(team){
   }
   else{
     sword_r_img.src = "pic/sword/sword-left.png";
-    sword_r.style.width = "700px";
     sword_r.style.right = "40vw";
     sword_r.style.transform = "scaleX(-1)";
     light_r.style.opacity = "1";

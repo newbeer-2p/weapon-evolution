@@ -336,7 +336,7 @@ button:hover{
 
 #bow{
   background: url("pic/bow/archerscene.png");
-  background-position: bottom;
+  background-position: left bottom;
   background-size: cover;
 }
 
@@ -346,31 +346,23 @@ button:hover{
 }
 
 .archer{
-  height: 100vh;
-  right: 0;
-  bottom: -6vh;
-  position: relative;
+  height: 650px;
+  right: -6vw;
+  /* bottom: -6vh; */
+  bottom: 0;
   
 }
 .archer[data-play="1"]{
-  /*animation:haay 1s;*/
   opacity: 0;
 }
 .arrow{
-  height: 100vh;
-  right: -62vh;
-  bottom: 0;
-  position: absolute;
-  
+  height: 650px;
+  left: 100vw;
+  bottom: 6vh;
 }
 .arrow[data-play="1"]{
-  /*animation: arrowshot 0.3s;*/
-  right:5%;
+  left: 0;
 } 
-
-/* .arrow:hover{
-  transform: translate(10px);
-} */
 
 #sword{
   background: url("pic/sword/swordscene.png");
@@ -389,7 +381,7 @@ button:hover{
 
 .swordLeft{
   /* width: 700px; */
-  width: 400px;
+  height: 400px;
   /* left: 20%; */
   left: 10%;
   bottom: 30%;
@@ -397,7 +389,7 @@ button:hover{
   transition: width 0s;
 }
 .swordRight{
-  width: 400px;
+  height: 400px;
   /* left: 55%; */
   right: 10%;
   bottom: 30%;
