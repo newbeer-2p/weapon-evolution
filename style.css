@@ -276,7 +276,7 @@ button:hover{
 /* Spear Page */
 
 #spear{
-  background: url("pic/spear/background.png");
+  background: url("pic/spear/spearscene.png");
   background-position: bottom;
   background-size: cover;
 }
@@ -293,6 +293,17 @@ button:hover{
   font-size: 24px;
 }
 
+#glassL{
+  width: 40vh;
+  left: -3ch;
+  top: 40vh;
+}
+
+#glassR{
+  width: 40vh;
+  right: 0;
+  top: 40vh;
+}
 .fish{
   width: 300px;
   bottom: -20px;
@@ -500,13 +511,14 @@ button:hover{
 }
 
 .muzzlesmoke{
-  top:230px;
-  left: 1470px;
+  bottom:55vh;
+  left: 80vw;
   z-index: 1;
   opacity: 0;
+
 }
 .muzzlesmoke[data-play="1"]{
-  animation: armshoot 1s infinite linear;
+  animation: smoke 1s infinite linear;
 }
 
 #bazooka{
