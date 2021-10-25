@@ -349,15 +349,23 @@ button:hover{
   height: 100vh;
   right: 0;
   bottom: -6vh;
-  position: absolute;
+  position: relative;
+  
 }
-
+.archer[data-play="1"]{
+  /*animation:haay 1s;*/
+  opacity: 0;
+}
 .arrow{
   height: 100vh;
   right: -62vh;
   bottom: 0;
   position: absolute;
-  animation: arrowshot 2s infinite linear;
+  
+}
+.arrow[data-play="1"]{
+  /*animation: arrowshot 0.3s;*/
+  right:5%;
 } 
 
 /* .arrow:hover{
@@ -970,5 +978,13 @@ button:hover{
 @keyframes shake{
   to{
     transform: translateX(10px);
+  }
+}
+@keyframes haay{
+  from{
+    opacity: 1;
+  }
+  to{
+    opacity: 0;
   }
 }

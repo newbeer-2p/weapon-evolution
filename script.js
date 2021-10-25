@@ -102,7 +102,22 @@ function play(event){
       }, 2500)
     }
     else if (pageno == 3){
-
+      let archer = document.querySelectorAll(".archer")[0];
+      let arrow = document.querySelectorAll(".arrow")[0];
+      let content = document.querySelectorAll(".bowContent")[0];
+      let clickme = document.querySelectorAll(".clickme")[2];
+      archer.dataset.play = "1";
+      arrow.dataset.play = "1";
+      content.dataset.show = "1";    
+      clickme.dataset.show  = "0";
+      playing = true;
+      
+      window.setTimeout(() => {
+        archer.dataset.play = "0";
+        arrow.dataset.play = "0";
+        clickme.dataset.show  = "1";
+        playing = false;
+      },1500);
     }
     else if (pageno == 4){
       let btn_l = document.querySelector("#swordBtn_L");
