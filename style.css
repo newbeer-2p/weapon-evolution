@@ -514,6 +514,12 @@ button:hover{
   background-position: bottom;
   background-size: cover;
 }
+#bazooka .bazookaContent{
+  position:fixed;
+  bottom: 0;
+  padding: 50px;
+  font-size: 24px;
+}
 .bomb-shooter{
   bottom: 0%;
   left: 12%;
