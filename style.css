@@ -657,7 +657,8 @@ button:hover{
   height: 80px;
 }
 .btn-end>button{
-  font-size: 80px;
+  font-size: 48px;
+  background: darkgrey;
 }
 .btn-login>button{
   padding: 10px 20px;
@@ -794,7 +795,6 @@ button:hover{
   background-color: rgb(255,255,255,0.5);
   border-radius: 25px;
 }
-
 #droneend{
   position: fixed;
   right: 10vw;
@@ -806,12 +806,14 @@ button:hover{
   right: 30vw;
   bottom: -1vh;
   width: 20vw;
+  animation: humanMove .5s infinite alternate;
 }
 #p-rightend{
   position: fixed;
   right: 10vw;
   bottom: -1vh;
   width: 20vw;
+  animation: humanMove .5s .75s infinite alternate;
 }
 #spearend{
   position: fixed;
@@ -861,9 +863,9 @@ button:hover{
   width: 20vw;
   left: 20vw;
 }
-
-
-
+#droneend{
+  animation: flying 2s infinite alternate;
+}
 
 /* Animations */
 
@@ -1025,7 +1027,6 @@ button:hover{
   }
 }
 
-
 @keyframes heliRightFly{
   from{
     transform: translateX(1000px);
@@ -1104,5 +1105,10 @@ button:hover{
   }
   to{
     opacity: 0;
+  }
+}
+@keyframes humanMove {
+  to{
+    transform: translateX(20px);
   }
 }
