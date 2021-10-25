@@ -535,6 +535,7 @@ button:hover{
 .bazooka-shooter{
   bottom: 0%;
   left: 5%;
+  animation: bazookashoot 1.25s 2s infinite linear;
 }
 .big-smoke{
   left: 25%;
@@ -546,6 +547,7 @@ button:hover{
 .bazookaAmmo{
   left:-10%;
   bottom: -23%;
+  animation: bazooka 1.25s 1.8s infinite linear;
 }
 #atomicbomb{
   background: url("pic/helicopter/helicopterascene.png");
@@ -863,3 +865,19 @@ button:hover{
     top: 200px;
   }
 }
+@keyframes bazooka {
+  from{
+    transform: translateX(0px);
+  }
+  to{
+    transform: translateX(700px);
+  }
+  }
+  @keyframes bazookashoot{
+    25%{
+      transform: translateX(-30px);
+    }
+    50%{
+      transform: translateX(0px);
+    }
+  }
