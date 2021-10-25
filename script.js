@@ -279,3 +279,35 @@ function resetDrone(){
   })
   btn.dataset.show = "0";
 }
+
+function checkNumber(el){
+  if (isNaN(el.value)){
+    el.value = "";
+  }
+}
+
+function login(){
+  let input = document.querySelectorAll(".pw-input");
+  let text = document.querySelectorAll(".login-text");
+  let content = document.querySelectorAll(".CyberContent")[0];
+
+  let pw1 = input[0];
+  let pw2 = input[1];
+  let pw3 = input[2];
+  let pw4 = input[3];
+
+  content.dataset.show = "1";
+  if (+pw1.value == 4 & +pw2.value == 8 & +pw3.value == 2 & +pw4.value == 2){
+    text[0].dataset.show = "1";
+    text[1].dataset.show = "0";
+  }
+  else{
+    text[0].dataset.show = "0";
+    text[1].dataset.show = "1";
+  }
+
+  window.setTimeout(()=>{
+    text[0].dataset.show = "0";
+    text[1].dataset.show = "0";
+  }, 2000)
+}

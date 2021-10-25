@@ -551,7 +551,7 @@ button:hover{
 }
 #atomicbomb{
   background: url("pic/helicopter/helicopterascene.png");
-  background-position: bottom;
+  background-position: left bottom;
   background-size: cover;
 }
 #atomicbomb .atomicContent{
@@ -576,6 +576,32 @@ button:hover{
   opacity: 0;
 }
 
+#fire1{
+  width: 10%;
+  left: 500px;
+  bottom: 10px;
+  animation: bigfire .5s 1s infinite linear alternate;
+}
+
+#fire2{
+  left: 1400px;
+  top: 200px;
+  animation: bigfire .5s .25s infinite linear alternate;
+}
+
+#fire3{
+  left: 100px;
+  bottom: 25vh;
+  animation: bigfire .5s .75s infinite linear alternate;
+}
+
+#fire4{
+  width: 10%;
+  left: 1590px;
+  top: 830px;
+  animation: bigfire .5s 1s infinite linear alternate;
+}
+
 #Cyber{
   background: url("pic/cyber/cyberscene.png");
   background-position: bottom;
@@ -585,6 +611,7 @@ button:hover{
   bottom: 0px;
   left: 0px;
   width: 100vw;
+  transition: width 0s;
 }
 #Cyber .CyberContent{
   position:fixed;
@@ -597,6 +624,44 @@ button:hover{
   left: 120px;*/
   z-index: 2;
   animation: emote 1s infinite alternate;
+}
+#passwordInput{
+  right: 0;
+  padding: 20px;
+  margin: 50px;
+}
+.pw-text{
+  font-size: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.pw-input{
+  text-align: center;
+  font-size: 50px;
+  border-radius: 10px;
+  margin: 0px 5px;
+}
+.btn-login>button{
+  padding: 10px 20px;
+  margin-top: 20px;
+  float: right;
+}
+.login-text{
+  font-size: 24px;
+  float: right;
+  padding: 25px 10px;
+  margin-right: 20px;
+}
+.login-text[data-show="0"]{
+  display: none;
+}
+#login-text-true{
+  color: green;
+}
+
+#login-text-false{
+  color: red;
+  animation: shake .2s infinite alternate linear;
 }
 #drone{
   background: url("pic/drone/dronescene.png");
@@ -814,6 +879,12 @@ button:hover{
   }
 }
 
+@keyframes bigfire{
+  to{
+    transform: scale(.75);
+  }
+}
+
 
 @keyframes heliRightFly{
   from{
@@ -881,3 +952,9 @@ button:hover{
       transform: translateX(0px);
     }
   }
+
+@keyframes shake{
+  to{
+    transform: translateX(10px);
+  }
+}
