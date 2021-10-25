@@ -193,7 +193,10 @@ function play(event){
       
     }
     else if (pageno == 9){
+      let content = document.querySelectorAll(".droneContent")[0];
 
+      content.dataset.show = "1";
+      playing = true;
     }
     else if (pageno == 10){
       // let clickme = document.querySelectorAll(".clickme")[9];

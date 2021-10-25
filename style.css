@@ -622,6 +622,12 @@ button:hover{
   animation: droneflies 2s 3s infinite alternate;
   transform: scale(.75);
 }
+#drone .droneContent{
+  position:fixed;
+  bottom: 0;
+  padding: 50px;
+  font-size: 24px;
+}
 
 .drones-img{
   width: 100%;
