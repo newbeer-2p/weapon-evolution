@@ -511,8 +511,8 @@ button:hover{
 }
 
 .muzzlesmoke{
-  bottom:55vh;
-  left: 80vw;
+  bottom:45vh;
+  left: 65vw;
   z-index: 1;
   opacity: 0;
 
