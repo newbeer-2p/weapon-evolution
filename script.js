@@ -192,12 +192,20 @@ function play(event){
     }
     else if (pageno == 7){
       let content = document.querySelectorAll(".bazookaContent")[0];
-
+      let bazookashooter = document.querySelectorAll(".bazooka-shooter")[0];
+      let bazookaAmmo = document.querySelectorAll(".bazookaAmmo")[0];
+      let clickme = document.querySelectorAll(".clickme")[6];
       content.dataset.show = "1";
+      bazookashooter.dataset.play = "1";
+      bazookaAmmo.dataset.play = "1";
+      clickme.dataset.show = "0"
       playing = true;
-
-
-      
+      window.setTimeout(()=>{
+        bazookashooter.dataset.play = "0";
+        bazookaAmmo.dataset.play = "0";
+        clickme.dataset.show = "1"
+        playing = false;
+      }, 1000)
     }
     else if (pageno == 8){
       let content = document.querySelectorAll(".CyberContent")[0];
