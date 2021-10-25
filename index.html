@@ -211,6 +211,18 @@
           <div class="emote">
             <img src="pic/cyber/think.png">
           </div>
+          <div id="passwordInput">
+            <div class="pw-text">กรุณากรอกรหัสที่เป็นตัวเลข</div>
+            <input type="text" class="pw-input" size="1" maxlength="1" oninput="checkNumber(this)">
+            <input type="text" class="pw-input" size="1" maxlength="1" oninput="checkNumber(this)">
+            <input type="text" class="pw-input" size="1" maxlength="1" oninput="checkNumber(this)">
+            <input type="text" class="pw-input" size="1" maxlength="1" oninput="checkNumber(this)">
+            <div class="btn-login">
+              <button class="btn" onclick="login()">ล็อกอิน</button>
+              <div class="login-text" id="login-text-true" data-show="0">เข้าสู่ระบบสำเร็จ</div>
+              <div class="login-text" id="login-text-false" data-show="0">เข้าสู่ระบบล้มเหลว</div>
+            </div>
+          </div>
         </div>
         
         <div class="page" id="drone" data-show="0">
