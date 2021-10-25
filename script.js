@@ -286,10 +286,14 @@ function checkNumber(el){
   }
 }
 
+let wrong_pw = 0;
+
 function login(){
   let input = document.querySelectorAll(".pw-input");
   let text = document.querySelectorAll(".login-text");
   let content = document.querySelectorAll(".CyberContent")[0];
+  let emote = document.querySelectorAll(".emote")[0];
+  let hint_text = document.querySelectorAll(".hint-text");
 
   let pw1 = input[0];
   let pw2 = input[1];
@@ -297,13 +301,19 @@ function login(){
   let pw4 = input[3];
 
   content.dataset.show = "1";
-  if (+pw1.value == 4 & +pw2.value == 8 & +pw3.value == 2 & +pw4.value == 2){
+  if (+pw1.value == 6 & +pw2.value == 2 & +pw3.value == 4 & +pw4.value == 8){
     text[0].dataset.show = "1";
     text[1].dataset.show = "0";
+    emote.dataset.show = "1";
   }
   else{
     text[0].dataset.show = "0";
     text[1].dataset.show = "1";
+    emote.dataset.show = "0";
+    hint_text[wrong_pw].dataset.show = "1";
+    if (wrong_pw < 3){
+      wrong_pw++;
+    }
   }
 
   window.setTimeout(()=>{

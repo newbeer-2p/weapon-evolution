@@ -625,6 +625,9 @@ button:hover{
   z-index: 2;
   animation: emote 1s infinite alternate;
 }
+.emote[data-show="0"]{
+  opacity: 0;
+}
 #passwordInput{
   right: 0;
   padding: 20px;
@@ -640,6 +643,9 @@ button:hover{
   font-size: 50px;
   border-radius: 10px;
   margin: 0px 5px;
+}
+.btn-login{
+  height: 80px;
 }
 .btn-login>button{
   padding: 10px 20px;
@@ -663,6 +669,17 @@ button:hover{
   color: red;
   animation: shake .2s infinite alternate linear;
 }
+.pw-hint{
+  text-align: right;
+  font-size: 20px;
+  text-shadow: 2px 2px white;
+  transform: translate(45px, 20px);
+  position: fixed;
+}
+.hint-text[data-show="0"]{
+  opacity: 0;
+}
+
 #drone{
   background: url("pic/drone/dronescene.png");
   background-position: bottom;
