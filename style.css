@@ -137,7 +137,7 @@ button:hover{
   z-index: 5;
   margin: 10px 50px;
   padding: 30px;
-  background: hsl(0, 100%, 100%, .5);
+  background: hsl(0, 100%, 100%);
   font-size: 20px;
   border-radius: 25px;
   width: 500px;
@@ -163,7 +163,6 @@ button:hover{
   width: 100vw;
   color: #2e1207;
   top: 150px;
-  opacity: .5;
   z-index: 5;
   transition: .5s;
 }
