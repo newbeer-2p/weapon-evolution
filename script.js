@@ -175,14 +175,14 @@ function play(event){
 
       content.dataset.show = "1";
       gunner.dataset.play = "1";
-      muzzlesmoke.dataset.play = "1";
+      // muzzlesmoke.dataset.play = "1";
       gunner_arm.dataset.play = "1";
       clickme.dataset.show = "0";
       playing = true;
 
       window.setTimeout(()=>{
         gunner.dataset.play = "0";
-        muzzlesmoke.dataset.play = "0";
+        // muzzlesmoke.dataset.play = "0";
         gunner_arm.dataset.play = "0";
         clickme.dataset.show = "1";
         playing = false;
@@ -260,7 +260,7 @@ function chooseTeam(team){
 
 function shootDrone(no){
   let content = document.querySelectorAll(".droneContent")[0];
-  let btn = document.querySelectorAll(".btn-reset")[0];
+  let btn = document.querySelectorAll(".btn-reset")[1];
   let drone = document.querySelectorAll(".flying-drone")[no];
 
   drone.dataset.destroyed = "1";
@@ -270,7 +270,7 @@ function shootDrone(no){
 
 function resetDrone(){
   let drones = document.querySelectorAll(".flying-drone");
-  let btn = document.querySelectorAll(".btn-reset")[0];
+  let btn = document.querySelectorAll(".btn-reset")[1];
 
   drones.forEach((drone)=>{
     drone.dataset.destroyed = "0";
@@ -322,7 +322,19 @@ function login(){
 
 function catchFire(el){
   let content = document.querySelectorAll(".atomicContent")[0];
+  let btn = document.querySelectorAll(".btn-reset")[0];
 
-  content.dataset.show = "1"
-  el.dataset.show = "0"
+  content.dataset.show = "1";
+  el.dataset.show = "0";
+  btn.dataset.show = "1";
+}
+
+function resetFire(){
+  let fires = document.querySelectorAll(".fire");
+  let btn = document.querySelectorAll(".btn-reset")[0];
+
+  fires.forEach((fire)=>{
+    fire.dataset.show = "1";
+  })
+  btn.dataset.show = "0";
 }

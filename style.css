@@ -361,7 +361,8 @@ button:hover{
   bottom: 6vh;
 }
 .arrow[data-play="1"]{
-  left: 0;
+  /* left: 0; */
+  animation: arrowshot 2s infinite linear;
 } 
 
 #sword{
@@ -762,6 +763,9 @@ button:hover{
   align-items: center;
   text-align: center;
 }
+.endContent{
+  z-index: 5;
+}
 #end01,#end03{
   background-image: linear-gradient(white, black);
 }
@@ -854,19 +858,33 @@ button:hover{
 #fishend1{
   width: 20vw;
   left: 0;
+  bottom: 12vh;
 }
 #fishend2{
   width: 20vw;
-  left: 10vw;
+  left: 5vw;
+  bottom: 17vh;
 }
 #fishend3{
   width: 20vw;
-  left: 20vw;
+  left: 12vw;
+  bottom: 15vh;
 }
 #droneend{
   animation: flying 2s infinite alternate;
 }
-
+#end-axe1{
+  left: -25vw;
+  width: 350px;
+  top: 0;
+  animation: axe-end-1 10s infinite linear;
+}
+#end-axe2{
+  right: -25vw;
+  width: 250px;
+  transform: scaleX(-1);
+  animation: axe-end-2 12s  .75s infinite linear;
+}
 /* Animations */
 
 @keyframes staring{
@@ -948,11 +966,13 @@ button:hover{
 }
 
 @keyframes arrowshot{
-  50% {
-    right: 6vh;
+  25%, 99% {
+    left: 0;
+    opacity: 1;
   }
   100%{
-    right: 6vh;
+    left: 0;
+    opacity: 0;
   }
 }
 
@@ -1110,5 +1130,17 @@ button:hover{
 @keyframes humanMove {
   to{
     transform: translateX(20px);
+  }
+}
+@keyframes axe-end-1 {
+  to{
+    left: 100vw;
+    transform: rotate(1080deg);
+  }
+}
+@keyframes axe-end-2 {
+  to{
+    right: 100vw;
+    transform: scaleX(-1) rotate(1440deg);
   }
 }
