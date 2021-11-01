@@ -138,10 +138,14 @@ button:hover{
   margin: 10px 50px;
   padding: 30px;
   background: hsl(0, 100%, 100%);
-  font-size: 20px;
+  font-size: 22px;
   border-radius: 25px;
   width: 500px;
   right: 0;
+}
+
+.text > h1 {
+  text-align: center;
 }
 
 .text[data-show="0"]{
@@ -370,9 +374,9 @@ button:hover{
   background-size: cover;
 }
 #sword .swordContent{
-  position:flex;
   bottom: 0;
-  width: fit-content;
+  width: 500px;
+  right: 27vw;
 }
 
 .swordLeft > img, .swordRight > img{
@@ -721,9 +725,9 @@ button:hover{
   transform: scale(.75);
 }
 #drone .droneContent{
-  position:fixed;
   bottom: 0;
-  width: fit-content;
+  width: 500px;
+  right: 25vw;
 }
 
 .drones-img{
@@ -795,7 +799,7 @@ button:hover{
   text-align: right;
   margin-right: 20px;
   padding: 10px;
-  background-color: rgb(255,255,255,0.5);
+  background-color: rgb(255,255,255);
   border-radius: 25px;
 }
 #droneend{
