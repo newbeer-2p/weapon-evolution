@@ -205,7 +205,7 @@ function play(event){
         playing = false;
       }, 1000)
     }
-    else if (pageno == 9){
+    else if (pageno == 10){
       let content = document.querySelectorAll(".droneContent")[0];
 
       content.dataset.show = "1";
