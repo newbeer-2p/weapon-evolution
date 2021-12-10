@@ -1,1149 +1,1242 @@
 * {
-  font-family: 'Kanit', sans-serif;
+    font-family: 'Kanit', sans-serif;
 }
 
 body {
-  --sy: 0;
-  --ch: 0;
-  --pg: 17;
-  margin: 0;
-  height: calc(520 * (var(--pg) + 3) * 1px);
+    --sy: 0;
+    --ch: 0;
+    --pg: 17;
+    margin: 0;
+    height: calc(520 * (var(--pg) + 3) * 1px);
 }
 
-#canvas{
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  scroll-snap-type: y;
+#canvas {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    scroll-snap-type: y;
 }
 
 #popup {
-  position: fixed;
-  left: 0;
-  top: 0;
-  background: hsl(0, 100%, 100%);
-  text-align: left;
-  width: 150px;
-  color: black;
-  text-shadow: none;
-  z-index: 10;
-  width: 200px!important;
-  height: auto!important;
-  font-size: 30px;
-  opacity: 0.2;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: hsl(0, 100%, 100%);
+    text-align: left;
+    width: 150px;
+    color: black;
+    text-shadow: none;
+    z-index: 10;
+    width: 200px!important;
+    height: auto!important;
+    font-size: 30px;
+    opacity: 0.2;
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+    width: 10px;
+    height: 10px;
 }
+
 
 /* Track */
+
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+    background: #f1f1f1;
 }
+
 
 /* Handle */
+
 ::-webkit-scrollbar-thumb {
-  background: #888; 
-  border-radius: 10px;
+    background: #888;
+    border-radius: 10px;
 }
+
 
 /* Handle on hover */
+
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+    background: #555;
 }
 
-button{
-  border-style: none;
+button {
+    border-style: none;
 }
 
-button:hover{
-  cursor: pointer;
-  box-shadow: 0px 0px 16px hsl(0, 100%, 0%);
+button:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.219);
 }
 
 .navbar {
-  position: fixed;
-  background-color: white;
-  width: 100vw;
-  height: 7.5px;
-  z-index: 20;
-
-  
+    position: fixed;
+    background-color: white;
+    width: 100vw;
+    height: 7.5px;
+    z-index: 20;
 }
 
 .navbar .btnItem {
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-columns: repeat(var(--pg), 1fr);
-  grid-gap: 2px;
-  position: absolute;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(var(--pg), 1fr);
+    grid-gap: 2px;
+    position: absolute;
 }
 
 .navbar .btnItem div {
-  grid-column: span 1;
-  background-color: white;
-  opacity: .5;
-  height: 100%;
-  transition: .3s;
-  cursor: pointer;
+    grid-column: span 1;
+    background-color: white;
+    opacity: .5;
+    height: 100%;
+    transition: .3s;
+    cursor: pointer;
 }
 
-.navbar .progessbar{
-  background: #2e1207;
-  height: 100%;
-  transition: .5s;
-  width: calc((var(--sy)/(520*var(--pg)))*100 * 1%);
+.navbar .progessbar {
+    background: #2e1207;
+    height: 100%;
+    transition: .5s;
+    width: calc((var(--sy)/(520*var(--pg)))*100 * 1%);
 }
 
 .navbar .btnItem div:hover {
-  transform: scale(1.2);
-  background: #2e1207;
-  opacity: 1;
-  z-index: 25;
+    transform: scale(1.2);
+    background: #2e1207;
+    opacity: 1;
+    z-index: 25;
 }
 
-.page{
-  width: 100%;
-  height: 100%;
-  transition: all 1s;
-  position: fixed;
-  background: hsl(calc(var(--ch)/var(--pg)*360), 100%, 50%);
-  scroll-snap-align: start;
+.page {
+    width: 100%;
+    height: 100%;
+    transition: all 1s;
+    position: fixed;
+    background: hsl(calc(var(--ch)/var(--pg)*360), 100%, 50%);
+    scroll-snap-align: start;
 }
 
 .box {
-  transition: 0s;
+    transition: 0s;
 }
 
-.page>*{
-  position: absolute;
-  transition: all 1s;
-  
+.page>* {
+    position: absolute;
+    transition: all 1s;
 }
 
-.page[data-show = "0"]{
-  opacity: 0;
+.page[data-show="0"] {
+    opacity: 0;
 }
 
-.tr{
-  text-align: right;
+.tr {
+    text-align: right;
 }
 
-.text{
-  transform: translateY(50px);
-  z-index: 5;
-  margin: 10px 50px;
-  padding: 30px;
-  background: hsl(0, 100%, 100%);
-  font-size: 22px;
-  border-radius: 25px;
-  width: 500px;
-  right: 0;
+.text {
+    transform: translateY(50px);
+    z-index: 5;
+    margin: 10px 50px;
+    padding: 30px;
+    background: hsl(0, 100%, 100%);
+    font-size: 22px;
+    border-radius: 25px;
+    width: 500px;
+    right: 0;
 }
 
-.text > h1 {
-  text-align: center;
+.text>h1 {
+    text-align: center;
 }
 
-.text[data-show="0"]{
-  opacity: 0;
+.text[data-show="0"] {
+    opacity: 0;
 }
 
-.page[data-show="1"] .text{
-  transform: translateY(0px);
+.page[data-show="1"] .text {
+    transform: translateY(0px);
 }
 
 .page .text-topic div {
-  font-size: calc(100vw / 35);
-  transform: translateY(-20px);
+    font-size: calc(100vw / 35);
+    transform: translateY(-20px);
 }
 
-.clickme, .clickme-down {
-  font-size: 65px;
-  text-align: center;
-  width: 100vw;
-  color: #2e1207;
-  top: 150px;
-  z-index: 5;
-  transition: .5s;
+.clickme,
+.clickme-down {
+    font-size: 65px;
+    text-align: center;
+    width: 100vw;
+    color: #2e1207;
+    top: 150px;
+    z-index: 5;
+    transition: .5s;
 }
 
-:where(.clickme, .clickme-down)[data-show="0"]{
-  opacity: 0;
+:where(.clickme, .clickme-down)[data-show="0"] {
+    opacity: 0;
 }
 
 .clickme-down {
-  top: 80%;
+    top: 80%;
 }
 
-.clickme>div, .clickme-down>div{
-  font-size: 30px;
+.clickme>div,
+.clickme-down>div {
+    font-size: 30px;
 }
+
 
 /* Home */
 
 #topic {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  background: url("pic/topic/background.png");
-  background-position: center;
-  background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("pic/topic/background.png");
+    background-position: center;
+    background-size: cover;
 }
 
-#topic .text-topic{
-  font-size: calc(100vw / 15);
+#topic .text-topic {
+    font-size: calc(100vw / 15);
 }
 
-#topic .p-left{
-  width: 400px;
-  height: 400px;
-  bottom: -65px;
-  left: calc((var(--sy)/520*40)*1%);
+#topic .p-left {
+    width: 400px;
+    height: 400px;
+    bottom: -65px;
+    left: calc((var(--sy)/520*40)*1%);
 }
 
-#topic .p-right{
-  width: 400px;
-  height: 400px;
-  bottom: -65px;
-  right: calc((var(--sy)/520*40)*1%);
+#topic .p-right {
+    width: 400px;
+    height: 400px;
+    bottom: -65px;
+    right: calc((var(--sy)/520*40)*1%);
 }
 
-#topic .drone{
-  right: 300px;
-  top: 100px;
-  width: 300px;
-  height: 300px;
-  animation: flying 2s infinite alternate linear;
+#topic .drone {
+    right: 300px;
+    top: 100px;
+    width: 300px;
+    height: 300px;
+    animation: flying 2s infinite alternate linear;
 }
 
-#topic .heri-1{
-  top: -150px;
-  right: 80%;
-  animation: flying 3s 1s infinite alternate linear;
+#topic .heri-1 {
+    top: -150px;
+    right: 80%;
+    animation: flying 3s 1s infinite alternate linear;
 }
 
-#topic .heri-2{
-  right: 150px;
-  top: -200px;
-  width: 150px;
-  animation: flying 1.5s 1.5s infinite alternate linear;
+#topic .heri-2 {
+    right: 150px;
+    top: -200px;
+    width: 150px;
+    animation: flying 1.5s 1.5s infinite alternate linear;
 }
 
-#topic .scrollDown{
-  font-size: calc(100vw / 25);
-  opacity: .5;
-  color: #2e1207;
-  text-align: center;
-  bottom: 100px;
-  animation: staring 1s infinite alternate linear;
+#topic .scrollDown {
+    font-size: calc(100vw / 25);
+    opacity: .5;
+    color: #2e1207;
+    text-align: center;
+    bottom: 100px;
+    animation: staring 1s infinite alternate linear;
 }
+
 
 /* Axe Page */
 
-#axe{
-  background: url("pic/axe/background.png");
-  background-position: bottom;
-  background-size: cover;
+#axe {
+    background: url("pic/axe/background.png");
+    background-position: bottom;
+    background-size: cover;
 }
 
 #axe .box {
-  width: 450px;
-  height: 450px;
-  bottom: 0;
-  background:none;
-  animation: none;
-  transform: rotate(-50deg) scale(2);
+    width: 450px;
+    height: 450px;
+    bottom: 0;
+    background: none;
+    animation: none;
+    transform: rotate(-50deg) scale(2);
 }
 
-#axe .box[data-play="1"]{
-  animation: axeMove 2s infinite linear alternate,axeSpin 2s infinite linear alternate;
+#axe .box[data-play="1"] {
+    animation: axeMove 2s infinite linear alternate, axeSpin 2s infinite linear alternate;
 }
 
-.axeContent{
-  position:fixed;
-  bottom: 0;
+.axeContent {
+    position: fixed;
+    bottom: 0;
 }
 
 .leaves {
-  right: 100px;
-  top: -300px;
-  animation: none;
-  opacity: 0;
+    right: 100px;
+    top: -300px;
+    animation: none;
+    opacity: 0;
 }
 
-.leaves[data-play="1"]{
-  animation: leavesFall 4s 2s infinite linear;
+.leaves[data-play="1"] {
+    animation: leavesFall 4s 2s infinite linear;
 }
+
 
 /* Spear Page */
 
-#spear{
-  background: url("pic/spear/spearscene.png");
-  background-position: bottom;
-  background-size: cover;
+#spear {
+    background: url("pic/spear/spearscene.png");
+    background-position: bottom;
+    background-size: cover;
 }
 
 #spear .box {
-  width: 200px;
-  height: 200px;
-  right: 0;
+    width: 200px;
+    height: 200px;
+    right: 0;
 }
 
-#spear .content{
-  top: 0;
+#spear .content {
+    top: 0;
 }
 
-#glassL{
-  width: 40vh;
-  left: -3ch;
-  top: 40vh;
+#glassL {
+    width: 40vh;
+    left: -3ch;
+    top: 40vh;
 }
 
-#glassR{
-  width: 40vh;
-  right: 0;
-  top: 40vh;
-}
-.fish{
-  width: 300px;
-  bottom: -20px;
-  left: 50%;
-  opacity: 0;
-  transition: left 0s;
-  /* animation: fishmove 2s infinite linear; */
+#glassR {
+    width: 40vh;
+    right: 0;
+    top: 40vh;
 }
 
-.spash{
-  width: 300px;
-  bottom: -20px;
-  left: 50%;
-  opacity: 0;
-  transition: left 0s;
+.fish {
+    width: 300px;
+    bottom: -20px;
+    left: 50%;
+    opacity: 0;
+    transition: left 0s;
+    /* animation: fishmove 2s infinite linear; */
+}
+
+.spash {
+    width: 300px;
+    bottom: -20px;
+    left: 50%;
+    opacity: 0;
+    transition: left 0s;
 }
 
 #spearTool {
-  width: 300px;
-  left: 100%;
-  bottom: 100%;
-  /* animation: spearMove 2s 1s infinite linear; */
+    width: 300px;
+    left: 100%;
+    bottom: 100%;
+    /* animation: spearMove 2s 1s infinite linear; */
 }
-
 
 
 /* Bow Page */
 
-#bow{
-  background: url("pic/bow/archerscene.png");
-  background-position: left bottom;
-  background-size: cover;
+#bow {
+    background: url("pic/bow/archerscene.png");
+    background-position: left bottom;
+    background-size: cover;
 }
 
-#bow .bowContent{
-  position:fixed;
-  bottom: 0;
+#bow .bowContent {
+    position: fixed;
+    bottom: 0;
 }
 
-.archer{
-  height: 650px;
-  right: -6vw;
-  /* bottom: -6vh; */
-  bottom: 0;
-  
-}
-.archer[data-play="1"]{
-  opacity: 0;
-}
-.arrow{
-  height: 650px;
-  left: 100vw;
-  bottom: 6vh;
-}
-.arrow[data-play="1"]{
-  /* left: 0; */
-  animation: arrowshot 2s infinite linear;
-} 
-
-#sword{
-  background: url("pic/sword/swordscene.png");
-  background-position: bottom;
-  background-size: cover;
-}
-#sword .swordContent{
-  bottom: 0;
-  width: 500px;
-  right: 27vw;
+.archer {
+    height: 650px;
+    right: -6vw;
+    /* bottom: -6vh; */
+    bottom: 0;
 }
 
-.swordLeft > img, .swordRight > img{
-  transition: .2s;
+.archer[data-play="1"] {
+    opacity: 0;
 }
 
-.swordLeft{
-  /* width: 700px; */
-  height: 400px;
-  /* left: 20%; */
-  left: 10%;
-  bottom: 30%;
-  transform: scaleX(-1);
-  transition: width 0s;
-}
-.swordRight{
-  height: 400px;
-  /* left: 55%; */
-  right: 10%;
-  bottom: 30%;
-  transition: width 0s;
-}
-.peopleRight{
-  left: 50%;
-  bottom: -25%;
-  animation: swordspectator 0.6s 0.55s linear infinite alternate;
-  z-index: 2;
-}
-.peopleLeft{
-  bottom: -2%;
-  animation: swordspectator 0.55s 0.55s linear infinite alternate;
-  z-index: 2;
+.arrow {
+    height: 650px;
+    left: 100vw;
+    bottom: 6vh;
 }
 
-.lightLeft{
-  top: 0%;
-  left:10vw;
-  width: 1250px;
-}
-.lightRight{
-  top: 0%;
-  right:10vw;
-  width: 1250px;
-  transform: scaleX(-1);
-  opacity: 0;
+.arrow[data-play="1"] {
+    /* left: 0; */
+    animation: arrowshot 2s infinite linear;
 }
 
-#clickmeSword{
-  top: 50px;
+#sword {
+    background: url("pic/sword/swordscene.png");
+    background-position: bottom;
+    background-size: cover;
 }
 
-.btn{
-  padding: 25px;
-  font-size: 24px;
-  border-radius: 15px;
+#sword .swordContent {
+    bottom: 0;
+    width: 500px;
+    right: 27vw;
+}
+
+.swordLeft>img,
+.swordRight>img {
+    transition: .2s;
+}
+
+.swordLeft {
+    /* width: 700px; */
+    height: 400px;
+    /* left: 20%; */
+    left: 10%;
+    bottom: 30%;
+    transform: scaleX(-1);
+    transition: width 0s;
+}
+
+.swordRight {
+    height: 400px;
+    /* left: 55%; */
+    right: 10%;
+    bottom: 30%;
+    transition: width 0s;
+}
+
+.peopleRight {
+    left: 50%;
+    bottom: -25%;
+    animation: swordspectator 0.6s 0.55s linear infinite alternate;
+    z-index: 2;
+}
+
+.peopleLeft {
+    bottom: -2%;
+    animation: swordspectator 0.55s 0.55s linear infinite alternate;
+    z-index: 2;
+}
+
+.lightLeft {
+    top: 0%;
+    left: 10vw;
+    width: 1250px;
+}
+
+.lightRight {
+    top: 0%;
+    right: 10vw;
+    width: 1250px;
+    transform: scaleX(-1);
+    opacity: 0;
+}
+
+#clickmeSword {
+    top: 50px;
+}
+
+.btn {
+    padding: 25px;
+    font-size: 24px;
+    border-radius: 15px;
 }
 
 .btn-l {
-  top: 50px;
-  left: 10%;
-  z-index: 6;
+    top: 50px;
+    left: 10%;
+    z-index: 6;
 }
 
-.btn-l > button {
-  background: hsl(320, 100%, 75%);
-  left: 10%;
+.btn-l>button {
+    background: hsl(320, 100%, 75%);
+    left: 10%;
 }
 
 .btn-r {
-  top: 50px;
-  right: 10%;
-  z-index: 6;
+    top: 50px;
+    right: 10%;
+    z-index: 6;
 }
 
-.btn-r > button {
-  background: hsl(180, 100%, 50%);
-  right: 10%;
+.btn-r>button {
+    background: hsl(180, 100%, 50%);
+    right: 10%;
 }
 
-#cannon{
-  background: url("pic/cannon/cannonscene.png");
-  background-position: bottom;
-  background-size: cover;
-}
-#cannon .cannonContent{
-  position:fixed;
-  bottom: 0;
-}
-.cannonTool{
-  bottom: 0;
-  left: 50px;
-  z-index: 1;
-}
-.cannonTool[data-play="1"]{
-  animation: cannon 1s infinite linear;
-}
-.cannonAmmo{
-  width: 250px;
-  left: 400px;
-  bottom: 225px;
-}
-.cannonAmmo[data-play="1"]{
-  animation: shootBomb 1s infinite linear;
-}
-#gun{
-  background: url("pic/gun/gunscene.png");
-  background-position: bottom;
-  background-size: cover;
-}
-#gun .gunContent{
-  position:fixed;
-  bottom: 0;
-}
-.gunner{
-  bottom: 0px;
-  left: 0px;
-  z-index: 0;
-}
-.gunner[data-play="1"]{
-  animation: humanshoot 1s infinite linear;
-}
-.gunner-arm{
-  bottom: 0px;
-  left: 0px;
-  z-index: 1;
-  position: auto;
-}
-.gunner-arm[data-play="1"]{
-  animation: armshoot 1s infinite linear;
+#cannon {
+    background: url("pic/cannon/cannonscene.png");
+    background-position: bottom;
+    background-size: cover;
 }
 
-.muzzlesmoke{
-  bottom:45vh;
-  left: 65vw;
-  z-index: 1;
-  opacity: 0;
-
-}
-.muzzlesmoke[data-play="1"]{
-  animation: smoke 1s infinite linear;
+#cannon .cannonContent {
+    position: fixed;
+    bottom: 0;
 }
 
-#bazooka{
-  background: url("pic/bazooka/bazukascene.png");
-  background-position: bottom;
-  background-size: cover;
+.cannonTool {
+    bottom: 0;
+    left: 50px;
+    z-index: 1;
 }
-#bazooka > .clickme {
-  top: 50px;
+
+.cannonTool[data-play="1"] {
+    animation: cannon 1s infinite linear;
 }
-#bazooka .bazookaContent{
-  position:fixed;
-  bottom: 0;
+
+.cannonAmmo {
+    width: 250px;
+    left: 400px;
+    bottom: 225px;
 }
-.bazooka-shooter{
-  width: 90vw;
-  /*bottom: 0%;
+
+.cannonAmmo[data-play="1"] {
+    animation: shootBomb 1s infinite linear;
+}
+
+#gun {
+    background: url("pic/gun/gunscene.png");
+    background-position: bottom;
+    background-size: cover;
+}
+
+#gun .gunContent {
+    position: fixed;
+    bottom: 0;
+}
+
+.gunner {
+    bottom: 0px;
+    left: 0px;
+    z-index: 0;
+}
+
+.gunner[data-play="1"] {
+    animation: humanshoot 1s infinite linear;
+}
+
+.gunner-arm {
+    bottom: 0px;
+    left: 0px;
+    z-index: 1;
+    position: auto;
+}
+
+.gunner-arm[data-play="1"] {
+    animation: armshoot 1s infinite linear;
+}
+
+.muzzlesmoke {
+    bottom: 45vh;
+    left: 65vw;
+    z-index: 1;
+    opacity: 0;
+}
+
+.muzzlesmoke[data-play="1"] {
+    animation: smoke 1s infinite linear;
+}
+
+#bazooka {
+    background: url("pic/bazooka/bazukascene.png");
+    background-position: bottom;
+    background-size: cover;
+}
+
+#bazooka>.clickme {
+    top: 50px;
+}
+
+#bazooka .bazookaContent {
+    position: fixed;
+    bottom: 0;
+}
+
+.bazooka-shooter {
+    width: 90vw;
+    /*bottom: 0%;
   left: 5%;*/
-  bottom: 0;
-  
+    bottom: 0;
 }
-.bazooka-shooter[data-play="1"]{
-  animation: bazookashoot 1.5s .05s;
 
-} 
-.big-smoke{
-  left: 25%;
+.bazooka-shooter[data-play="1"] {
+    animation: bazookashoot 1.5s .05s;
 }
-.bazookaAmmo{
-  width: 90vw;
-  /*left:-10%;
+
+.big-smoke {
+    left: 25%;
+}
+
+.bazookaAmmo {
+    width: 90vw;
+    /*left:-10%;
   bottom: -23%;*/
-  bottom: 0;
-}
-.bazookaAmmo[data-play="1"]{
-  animation: bazooka 1s;
-} 
-#atomicbomb{
-  background: url("pic/helicopter/helicopterascene.png");
-  background-position: left bottom;
-  background-size: cover;
-}
-#atomicbomb .atomicContent{
-  position:fixed;
-  bottom: 0;
+    bottom: 0;
 }
 
-.heliRight{
-  left: 60%;
-  animation: heliRightFly 4s infinite linear;
-}
-.heliLeft{
-  left: 5%;
-  top: 5%;
-  animation: heliLeftFly 4s infinite linear;
+.bazookaAmmo[data-play="1"] {
+    animation: bazooka 1s;
 }
 
-.heli-bigsmoke{
-  animation: helismoke 2s 1s infinite linear;
-  opacity: 0;
+#atomicbomb {
+    background: url("pic/helicopter/helicopterascene.png");
+    background-position: left bottom;
+    background-size: cover;
 }
 
-#fire1{
-  width: 10%;
-  left: 500px;
-  bottom: 10px;
-  animation: bigfire .5s 1s infinite linear alternate;
+#atomicbomb .atomicContent {
+    position: fixed;
+    bottom: 0;
 }
 
-#fire2{
-  left: 1400px;
-  top: 200px;
-  animation: bigfire .5s .25s infinite linear alternate;
+.heliRight {
+    left: 60%;
+    animation: heliRightFly 4s infinite linear;
 }
 
-#fire3{
-  left: 100px;
-  bottom: 25vh;
-  animation: bigfire .5s .75s infinite linear alternate;
+.heliLeft {
+    left: 5%;
+    top: 5%;
+    animation: heliLeftFly 4s infinite linear;
 }
 
-#fire4{
-  width: 10%;
-  left: 1590px;
-  top: 830px;
-  animation: bigfire .5s 1s infinite linear alternate;
+.heli-bigsmoke {
+    animation: helismoke 2s 1s infinite linear;
+    opacity: 0;
 }
 
-.fire{
-  z-index: 7;
+#fire1 {
+    width: 10%;
+    left: 500px;
+    bottom: 10px;
+    animation: bigfire .5s 1s infinite linear alternate;
 }
 
-.fire:hover{
-  cursor: pointer;
+#fire2 {
+    left: 1400px;
+    top: 200px;
+    animation: bigfire .5s .25s infinite linear alternate;
 }
 
-.fire[data-show="0"]{
-  display: none;
+#fire3 {
+    left: 100px;
+    bottom: 25vh;
+    animation: bigfire .5s .75s infinite linear alternate;
 }
 
-#Cyber{
-  background: url("pic/cyber/cyberscene.png");
-  background-position: bottom;
-  background-size: cover;
+#fire4 {
+    width: 10%;
+    left: 1590px;
+    top: 830px;
+    animation: bigfire .5s 1s infinite linear alternate;
 }
-.cyber-arm{
-  bottom: 0px;
-  left: 0px;
-  width: 100vw;
-  transition: width 0s;
+
+.fire {
+    z-index: 7;
 }
-#Cyber .CyberContent{
-  position:fixed;
-  bottom: 0;
+
+.fire:hover {
+    cursor: pointer;
 }
-.emote{
-  /*bottom: 250px;
+
+.fire[data-show="0"] {
+    display: none;
+}
+
+#Cyber {
+    background: url("pic/cyber/cyberscene.png");
+    background-position: bottom;
+    background-size: cover;
+}
+
+.cyber-arm {
+    bottom: 0px;
+    left: 0px;
+    width: 100vw;
+    transition: width 0s;
+}
+
+#Cyber .CyberContent {
+    position: fixed;
+    bottom: 0;
+}
+
+.emote {
+    /*bottom: 250px;
   left: 120px;*/
-  z-index: 2;
-  animation: emote 1s infinite alternate;
-}
-.emote[data-show="0"]{
-  opacity: 0;
-}
-#passwordInput{
-  right: 0;
-  padding: 20px;
-  margin: 50px;
-}
-.pw-text{
-  font-size: 30px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-.pw-input{
-  text-align: center;
-  font-size: 50px;
-  border-radius: 10px;
-  margin: 0px 5px;
-}
-.btn-login{
-  height: 80px;
-}
-.btn-end>button{
-  font-size: 48px;
-  background: darkgrey;
-}
-.btn-login>button{
-  padding: 10px 20px;
-  margin-top: 20px;
-  float: right;
+    z-index: 2;
+    animation: emote 1s infinite alternate;
 }
 
-.login-text{
-  font-size: 24px;
-  float: right;
-  padding: 25px 10px;
-  margin-right: 20px;
-}
-.login-text[data-show="0"]{
-  display: none;
-}
-#login-text-true{
-  color: green;
+.emote[data-show="0"] {
+    opacity: 0;
 }
 
-#login-text-false{
-  color: red;
-  animation: shake .2s infinite alternate linear;
-}
-.pw-hint{
-  text-align: right;
-  font-size: 20px;
-  text-shadow: 2px 2px white;
-  transform: translate(45px, 20px);
-  position: fixed;
-}
-.hint-text[data-show="0"]{
-  opacity: 0;
+#passwordInput {
+    right: 0;
+    padding: 20px;
+    margin: 50px;
 }
 
-#drone{
-  background: url("pic/drone/dronescene.png");
-  background-position: bottom;
-  background-size: cover;
-}
-.flying-drone{
-  top: 150px;
-  width: calc( var(--s) * 20px);
-  left:calc(100px + var(--i)*300px) ;
-  animation: dronefly 1s calc(var(--i)*0.2s) infinite alternate;
-  transition: all 5s;
-}
-.flying-drone[data-destroyed="1"]{
-  transform: translateY(100vh);
-  animation: droneDestroyed .5s infinite linear;
-}
-.flying-drones{
-  animation: droneflies 2s infinite alternate;
-  opacity: .5;
-  left: 50px;
-}
-.flying-right{
-  left: 800px;
-  animation: droneflies 2s 3s infinite alternate;
-  transform: scale(.75);
-}
-#drone .droneContent{
-  bottom: 0;
-  width: 500px;
-  right: 25vw;
+.pw-text {
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
-.drones-img{
-  width: 100%;
-}
-.drones-img:hover{
-  animation: dronespin 0.1s infinite linear;
-  cursor: pointer;
-}
-.flying-drones{
-  top: 50px;
+.pw-input {
+    text-align: center;
+    font-size: 50px;
+    border-radius: 10px;
+    margin: 0px 5px;
 }
 
-#clickmeDrone{
-  top: 60vh;
+.btn-login {
+    height: 80px;
 }
 
-.btn-reset{
-  right: 20px;
-  top: 20px;
-}
-.btn-reset[data-show="0"]{
-  opacity: 0;
+.btn-end>button {
+    font-size: 48px;
+    background: darkgrey;
 }
 
-.btn-reset > button {
-  background: red;
-  color: white;
-  padding: 10px 20px;
+.btn-login>button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    float: right;
 }
-.end{
-  font-size: calc(100vw / 50);
-  color: #000000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+
+.login-text {
+    font-size: 24px;
+    float: right;
+    padding: 25px 10px;
+    margin-right: 20px;
 }
-.endContent{
-  z-index: 5;
+
+.login-text[data-show="0"] {
+    display: none;
 }
-#end01,#end03{
-  background-image: linear-gradient(white, black);
+
+#login-text-true {
+    color: green;
 }
-#end02{
-  background: url("pic/axe/background.png");
-  background-position: bottom;
-  background-size: cover;
+
+#login-text-false {
+    color: red;
+    animation: shake .2s infinite alternate linear;
 }
-#end04{
-  background: url("pic/helicopter/helicopterascene.png");
-  background-position: bottom;
-  background-size: cover;
+
+.pw-hint {
+    text-align: right;
+    font-size: 20px;
+    text-shadow: 2px 2px white;
+    transform: translate(45px, 20px);
+    position: fixed;
 }
-#end05{
-  background: url("pic/topic/background.png");
-  background-position: bottom;
-  background-size: cover;
+
+.hint-text[data-show="0"] {
+    opacity: 0;
 }
-#end06{
-  background: url("pic/spear/background.png");
-  background-position: bottom;
-  background-size: cover;
+
+#drone {
+    background: url("pic/drone/dronescene.png");
+    background-position: bottom;
+    background-size: cover;
 }
-.credit{
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  text-align: right;
-  margin-right: 20px;
-  padding: 10px;
-  background-color: rgb(255,255,255);
-  border-radius: 25px;
+
+.flying-drone {
+    top: 150px;
+    width: calc( var(--s) * 20px);
+    left: calc(100px + var(--i)*300px);
+    animation: dronefly 1s calc(var(--i)*0.2s) infinite alternate;
+    transition: all 5s;
 }
-#droneend{
-  position: fixed;
-  right: 10vw;
-  top: 10vh;
-  width: 25vw;
+
+.flying-drone[data-destroyed="1"] {
+    transform: translateY(100vh);
+    animation: droneDestroyed .5s infinite linear;
 }
-#p-leftend{
-  position: fixed;
-  right: 30vw;
-  bottom: -1vh;
-  width: 20vw;
-  animation: humanMove .5s infinite alternate;
+
+.flying-drones {
+    animation: droneflies 2s infinite alternate;
+    opacity: .5;
+    left: 50px;
 }
-#p-rightend{
-  position: fixed;
-  right: 10vw;
-  bottom: -1vh;
-  width: 20vw;
-  animation: humanMove .5s .75s infinite alternate;
+
+.flying-right {
+    left: 800px;
+    animation: droneflies 2s 3s infinite alternate;
+    transform: scale(.75);
 }
-#spearend{
-  position: fixed;
-  left: 10vw;
-  bottom: -5vh;
-  width: 20vw;
+
+#drone .droneContent {
+    bottom: 0;
+    width: 500px;
+    right: 25vw;
 }
-#spearend2{
-  position: fixed;
-  left: 15vw;
-  bottom: -5vh;
-  width: 20vw;
+
+.drones-img {
+    width: 100%;
 }
-#spearend3{
-  position: fixed;
-  left: 20vw;
-  bottom: -5vh;
-  width: 20vw;
+
+.drones-img:hover {
+    animation: dronespin 0.1s infinite linear;
+    cursor: pointer;
 }
-#spearfish1{
-  transform: rotate(140deg);
-  bottom: 0;
-  width: 20vw;
-  left: 10vw;
+
+.flying-drones {
+    top: 50px;
 }
-#spearfish2{
-  transform: rotate(130deg);
-  bottom: 0;
-  width: 20vw;
-  left: 5vw;
+
+#clickmeDrone {
+    top: 60vh;
 }
-#spearfish3{
-  transform: rotate(135deg);
-  bottom: -5vh;
-  width: 20vw;
-  left: 0;
+
+.btn-reset {
+    right: 20px;
+    top: 20px;
 }
-#fishend1{
-  width: 20vw;
-  left: 0;
-  bottom: 12vh;
+
+.btn-reset[data-show="0"] {
+    opacity: 0;
 }
-#fishend2{
-  width: 20vw;
-  left: 5vw;
-  bottom: 17vh;
+
+.btn-reset>button {
+    background: red;
+    color: white;
+    padding: 10px 20px;
 }
-#fishend3{
-  width: 20vw;
-  left: 12vw;
-  bottom: 15vh;
+
+.end {
+    font-size: calc(100vw / 50);
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
-#droneend{
-  animation: flying 2s infinite alternate;
+
+.endContent {
+    z-index: 5;
 }
-#end-axe1{
-  left: -25vw;
-  width: 350px;
-  top: 0;
-  animation: axe-end-1 10s infinite linear;
+
+#end01,
+#end03 {
+    background-image: linear-gradient(white, black);
 }
-#end-axe2{
-  right: -25vw;
-  width: 250px;
-  transform: scaleX(-1);
-  animation: axe-end-2 12s  .75s infinite linear;
+
+#end02 {
+    background: url("pic/axe/background.png");
+    background-position: bottom;
+    background-size: cover;
 }
+
+#end04 {
+    background: url("pic/helicopter/helicopterascene.png");
+    background-position: bottom;
+    background-size: cover;
+}
+
+#end05 {
+    background: url("pic/topic/background.png");
+    background-position: bottom;
+    background-size: cover;
+}
+
+#end06 {
+    background: url("pic/spear/background.png");
+    background-position: bottom;
+    background-size: cover;
+}
+
+.credit {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    text-align: right;
+    margin-right: 20px;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 25px;
+}
+
+#droneend {
+    position: fixed;
+    right: 10vw;
+    top: 10vh;
+    width: 25vw;
+}
+
+#p-leftend {
+    position: fixed;
+    right: 30vw;
+    bottom: -1vh;
+    width: 20vw;
+    animation: humanMove .5s infinite alternate;
+}
+
+#p-rightend {
+    position: fixed;
+    right: 10vw;
+    bottom: -1vh;
+    width: 20vw;
+    animation: humanMove .5s .75s infinite alternate;
+}
+
+#spearend {
+    position: fixed;
+    left: 10vw;
+    bottom: -5vh;
+    width: 20vw;
+}
+
+#spearend2 {
+    position: fixed;
+    left: 15vw;
+    bottom: -5vh;
+    width: 20vw;
+}
+
+#spearend3 {
+    position: fixed;
+    left: 20vw;
+    bottom: -5vh;
+    width: 20vw;
+}
+
+#spearfish1 {
+    transform: rotate(140deg);
+    bottom: 0;
+    width: 20vw;
+    left: 10vw;
+}
+
+#spearfish2 {
+    transform: rotate(130deg);
+    bottom: 0;
+    width: 20vw;
+    left: 5vw;
+}
+
+#spearfish3 {
+    transform: rotate(135deg);
+    bottom: -5vh;
+    width: 20vw;
+    left: 0;
+}
+
+#fishend1 {
+    width: 20vw;
+    left: 0;
+    bottom: 12vh;
+}
+
+#fishend2 {
+    width: 20vw;
+    left: 5vw;
+    bottom: 17vh;
+}
+
+#fishend3 {
+    width: 20vw;
+    left: 12vw;
+    bottom: 15vh;
+}
+
+#droneend {
+    animation: flying 2s infinite alternate;
+}
+
+#end-axe1 {
+    left: -25vw;
+    width: 350px;
+    top: 0;
+    animation: axe-end-1 10s infinite linear;
+}
+
+#end-axe2 {
+    right: -25vw;
+    width: 250px;
+    transform: scaleX(-1);
+    animation: axe-end-2 12s .75s infinite linear;
+}
+
+
 /* Animations */
 
-@keyframes staring{
-  from {
-    opacity: 0;
-  }
+@keyframes staring {
+    from {
+        opacity: 0;
+    }
 }
 
-@keyframes axeMove{
-  from {
-    left: 0vw;
-  }
-  to {
-    left: 75vw;
-  }
+@keyframes axeMove {
+    from {
+        left: 0vw;
+    }
+    to {
+        left: 75vw;
+    }
 }
 
-@keyframes axeSpin{
-  from {
-    transform : rotate(-50deg) scale(2);
-  }
-  to {
-    transform : rotate(1050deg) scale(0.9);
-  }
+@keyframes axeSpin {
+    from {
+        transform: rotate(-50deg) scale(2);
+    }
+    to {
+        transform: rotate(1050deg) scale(0.9);
+    }
 }
 
-@keyframes leavesFall{
-  0% {
-    transform: translate(0px, 0px);
-    opacity: 1;
-  }
-  50% {
-    transform: translate(-300px, 300px);
-    opacity: 0;
-  }
+@keyframes leavesFall {
+    0% {
+        transform: translate(0px, 0px);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(-300px, 300px);
+        opacity: 0;
+    }
 }
 
-@keyframes flying{
-  from{
-    transform: translate(0px, 0px)
-  }
-  to {
-    transform: translate(-20px, 40px)
-  }
-}
-@keyframes spearMove{
-  50% {
-    bottom: 125px;
-    left: 58%;
-  }
-  100%{
-    bottom: 125px;
-    left: 58%;
-  }
-}
-@keyframes spash{
-  from{
-    opacity: 1;
-  }
-  to{
-    opacity: 0;
-    transform: scale(2);
-  }
+@keyframes flying {
+    from {
+        transform: translate(0px, 0px)
+    }
+    to {
+        transform: translate(-20px, 40px)
+    }
 }
 
-@keyframes fishmove{
-  0% {
-    transform: translateY(40px);
-    opacity: 0;
-  }
-  50% {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(0px);
-    opacity: 1;
-  }
+@keyframes spearMove {
+    50% {
+        bottom: 125px;
+        left: 58%;
+    }
+    100% {
+        bottom: 125px;
+        left: 58%;
+    }
 }
 
-@keyframes arrowshot{
-  25%, 99% {
-    left: 0;
-    opacity: 1;
-  }
-  100%{
-    left: 0;
-    opacity: 0;
-  }
+@keyframes spash {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: scale(2);
+    }
 }
 
-@keyframes swordspectator{
-  from{
-    transform: translate(0px, 0px)
-  }
-  to {
-    transform: translate(0px, 25px)
-  }
-}
-@keyframes shootBomb{
-  to{
-    bottom: 100%;
-    left: 100%;
-    transform: rotate(240deg);
-  }
-}
-@keyframes cannon{
-  30%{
-    transform: translateX(-10px) rotateZ(-3deg);
-  }
-  50%{
-    transform: translateX(0);
-  }
+@keyframes fishmove {
+    0% {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
 }
 
-@keyframes humanshoot{
-  35%{
-    transform: translateX(-15px);
-  } 
-  50%{
-    transform: translateX(0px);
-  }
-  /* 75%{
+@keyframes arrowshot {
+    25%,
+    99% {
+        left: 0;
+        opacity: 1;
+    }
+    100% {
+        left: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes swordspectator {
+    from {
+        transform: translate(0px, 0px)
+    }
+    to {
+        transform: translate(0px, 25px)
+    }
+}
+
+@keyframes shootBomb {
+    to {
+        bottom: 100%;
+        left: 100%;
+        transform: rotate(240deg);
+    }
+}
+
+@keyframes cannon {
+    30% {
+        transform: translateX(-10px) rotateZ(-3deg);
+    }
+    50% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes humanshoot {
+    35% {
+        transform: translateX(-15px);
+    }
+    50% {
+        transform: translateX(0px);
+    }
+    /* 75%{
     transform: translateX(0px);
   } */
 }
 
-@keyframes armshoot{
-  25%{
-    transform: translateX(-20px);
-  }
-  50%{
-    transform: translateX(0px);
-  }
+@keyframes armshoot {
+    25% {
+        transform: translateX(-20px);
+    }
+    50% {
+        transform: translateX(0px);
+    }
 }
 
-@keyframes smoke{
-  0%{
-    opacity: 0;
-  }
-
-  25%{
-    opacity: 1;
-  }
+@keyframes smoke {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
 }
 
-@keyframes helismoke{
-  0%{
-    opacity: 0;
-  }
-
-  25%{
-    opacity: 1;
-  }
+@keyframes helismoke {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
 }
 
-@keyframes bigfire{
-  to{
-    transform: scale(.75);
-  }
+@keyframes bigfire {
+    to {
+        transform: scale(.75);
+    }
 }
 
-@keyframes heliRightFly{
-  from{
-    transform: translateX(1000px);
-  }
-  to{
-    transform: translateX(-1800px);
-  }
+@keyframes heliRightFly {
+    from {
+        transform: translateX(1000px);
+    }
+    to {
+        transform: translateX(-1800px);
+    }
 }
 
-@keyframes heliLeftFly{
-  from{
-    transform: translateX(-1000px);
-  }
-  to{
-    transform: translateX(1800px);
-  }
+@keyframes heliLeftFly {
+    from {
+        transform: translateX(-1000px);
+    }
+    to {
+        transform: translateX(1800px);
+    }
 }
 
 @keyframes emote {
-  from{
-    bottom: 250px;
-    left: 120px;
-  }
-  to{
-    bottom: 290px;
-    left: 120px;
-  }
+    from {
+        bottom: 250px;
+        left: 120px;
+    }
+    to {
+        bottom: 290px;
+        left: 120px;
+    }
 }
+
 @keyframes dronespin {
-  from{
-    transform: rotate(0deg);
-  }
-  to{
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
+
 @keyframes droneflies {
-  to{
-    top: 100px;
-  }
+    to {
+        top: 100px;
+    }
 }
 
 @keyframes dronefly {
-  from{
-    top: 50px;
-  }
-  to{
-    top: 200px;
-  }
+    from {
+        top: 50px;
+    }
+    to {
+        top: 200px;
+    }
 }
-@keyframes bazooka {
-  50%{
-    transform: translateX(100vw);
-  }
-  100%{
-    transform: translateX(100vw);
-  }
-  }
-  @keyframes bazookashoot{
-    25%{
-      transform: translateX(-30px);
-    }
-    50%{
-      transform: translateX(0px);
-    }
-  }
 
-@keyframes shake{
-  to{
-    transform: translateX(10px);
-  }
+@keyframes bazooka {
+    50% {
+        transform: translateX(100vw);
+    }
+    100% {
+        transform: translateX(100vw);
+    }
 }
-@keyframes haay{
-  from{
-    opacity: 1;
-  }
-  to{
-    opacity: 0;
-  }
+
+@keyframes bazookashoot {
+    25% {
+        transform: translateX(-30px);
+    }
+    50% {
+        transform: translateX(0px);
+    }
 }
+
+@keyframes shake {
+    to {
+        transform: translateX(10px);
+    }
+}
+
+@keyframes haay {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
 @keyframes humanMove {
-  to{
-    transform: translateX(20px);
-  }
+    to {
+        transform: translateX(20px);
+    }
 }
+
 @keyframes axe-end-1 {
-  to{
-    left: 100vw;
-    transform: rotate(1080deg);
-  }
+    to {
+        left: 100vw;
+        transform: rotate(1080deg);
+    }
 }
+
 @keyframes axe-end-2 {
-  to{
-    right: 100vw;
-    transform: scaleX(-1) rotate(1440deg);
-  }
+    to {
+        right: 100vw;
+        transform: scaleX(-1) rotate(1440deg);
+    }
 }

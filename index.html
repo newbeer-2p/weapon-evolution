@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,386 +8,376 @@
     <title>Weapon Evolution | Rocket Project</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <div class="navbar">
-    <div class="btnItem">
-        <div onclick="goTo(1)"></div>
-        <div onclick="goTo(2)"></div>
-        <div onclick="goTo(3)"></div>
-        <div onclick="goTo(4)"></div>
-        <div onclick="goTo(5)"></div>
-        <div onclick="goTo(6)"></div>
-        <div onclick="goTo(7)"></div>
-        <div onclick="goTo(8)"></div>
-        <div onclick="goTo(9)"></div>
-        <div onclick="goTo(10)"></div>
-        <div onclick="goTo(11)"></div>
-        <div onclick="goTo(12)"></div>
-        <div onclick="goTo(13)"></div>
-        <div onclick="goTo(14)"></div>
-        <div onclick="goTo(15)"></div>
-        <div onclick="goTo(16)"></div>
-        <div onclick="goTo(17)"></div>
+    <div class="navbar">
+        <div class="btnItem">
+            <div onclick="goTo(1)"></div>
+            <div onclick="goTo(2)"></div>
+            <div onclick="goTo(3)"></div>
+            <div onclick="goTo(4)"></div>
+            <div onclick="goTo(5)"></div>
+            <div onclick="goTo(6)"></div>
+            <div onclick="goTo(7)"></div>
+            <div onclick="goTo(8)"></div>
+            <div onclick="goTo(9)"></div>
+            <div onclick="goTo(10)"></div>
+            <div onclick="goTo(11)"></div>
+            <div onclick="goTo(12)"></div>
+            <div onclick="goTo(13)"></div>
+            <div onclick="goTo(14)"></div>
+            <div onclick="goTo(15)"></div>
+            <div onclick="goTo(16)"></div>
+            <div onclick="goTo(17)"></div>
+        </div>
+        <div class="progessbar"></div>
     </div>
-    <div class="progessbar"></div>
-  </div>
     <div id="canvas" onclick="play(event)">
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
         </style>
-        
+
         <div class="page" id="topic" data-show="1">
-          <div class="text-topic">
-            วิวัฒนาการของอาวุธ
-            <div>อดีต - ปัจจุบัน</div>
-          </div>
-          <div class="p-left">
-            <img src="pic/topic/human1.png" width="100%">
-          </div>
-          <div class="p-right">
-            <img src="pic/topic/human2.png" width="100%">
-          </div>
-          <div class="drone">
-            <img src="pic/topic/drone.png" width="100%">
-          </div>
-          <div class="heri-1">
-            <img src="pic/topic/jet1.png" alt="">
-          </div>
-          <div class="heri-2">
-            <img src="pic/topic/jet.png" alt="">
-          </div>
-          <div class="scrollDown">เลื่อนลงไปข้างล่าง</div>
+            <div class="text-topic">
+                วิวัฒนาการของอาวุธ
+                <div>อดีต - ปัจจุบัน</div>
+            </div>
+            <div class="p-left">
+                <img src="pic/topic/human1.png" width="100%">
+            </div>
+            <div class="p-right">
+                <img src="pic/topic/human2.png" width="100%">
+            </div>
+            <div class="drone">
+                <img src="pic/topic/drone.png" width="100%">
+            </div>
+            <div class="heri-1">
+                <img src="pic/topic/jet1.png" alt="">
+            </div>
+            <div class="heri-2">
+                <img src="pic/topic/jet.png" alt="">
+            </div>
+            <div class="scrollDown">เลื่อนลงไปข้างล่าง</div>
         </div>
-        
+
         <div class="page" id="axe" data-show="0">
-          <div class="clickme" data-show="1">คลิกเพื่อปาขวาน</div>
-          <div class="text axeContent" data-show="0">
-            <h1>ขวาน ( 1,000,000 BC )</h1>
-            &emsp;&emsp;ขวานในสมัยโบราณ ส่วนหัวทำจากหินและผูกเข้ากันกับด้ามไม้
-            ในขณะที่ขวานในยุคปัจจุบันส่วนหัวจะสร้างจากเหล็กและด้ามจับไม้</div>
-          <div class="box" id="axeTool">
-            <img src="pic/axe/axee.png" width="100%" height="100%">
-          </div>
-          <div class="leaves">
-            <img src="pic/axe/leaf.png" alt="">
-          </div>
+            <div class="clickme" data-show="1">คลิกเพื่อปาขวาน</div>
+            <div class="text axeContent" data-show="0">
+                <h1>ขวาน ( 1,000,000 BC )</h1>
+                ขวานในสมัยโบราณ ส่วนหัวทำจากหินและผูกเข้ากันกับด้ามไม้ ในขณะที่ขวานในยุคปัจจุบันส่วนหัวจะสร้างจากเหล็กและด้ามจับไม้
+            </div>
+            <div class="box" id="axeTool">
+                <img src="pic/axe/axee.png" width="100%" height="100%">
+            </div>
+            <div class="leaves">
+                <img src="pic/axe/leaf.png" alt="">
+            </div>
         </div>
-        
+
         <div class="page" id="spear" data-show="0">
-          <div class="clickme clickme-down" data-show="1">คลิกพื้นที่เพื่อจับปลา</div>
-          <div class="text content" id="spearContent" data-show="0">
-            <h1>หอก ( 300,000 BC )</h1>
-            &emsp;&emsp;พบหอกส่วนมากเป็นหินปลายแหลม นำมาผูกติดกับท่อนไม้ 
-            ซึ่งซึ่งจะพบในยุคหินเก่า ในขณะที่ในยุคหินใหม่นั้นจะมีการเหลาปลายหอกให้แหลมขึ้น 
-            ส่วนใหญ่ใช้ในการล่าสัตว์
-          </div>
-          <div class="spash" id="s1">
-            <img src="pic/spear/effect1.png" width="100%">
-          </div>
-          <div class="fish">
-            <img src="pic/spear/fish.png" width="100%">
-          </div>
-          <div id="spearTool">
-            <img src="pic/spear/spears.png" width="100%">
-          </div>
-          <div id="glassL">
-            <img src="pic/spear/grass-left.png" width="100%">
-          </div>
-          <div id="glassR">
-            <img src="pic/spear/grass-right.png" width="100%">
-          </div>
+            <div class="clickme clickme-down" data-show="1">คลิกพื้นที่เพื่อจับปลา</div>
+            <div class="text content" id="spearContent" data-show="0">
+                <h1>หอก ( 300,000 BC )</h1>
+                พบหอกส่วนมากเป็นหินปลายแหลม นำมาผูกติดกับท่อนไม้ ซึ่งซึ่งจะพบในยุคหินเก่า ในขณะที่ในยุคหินใหม่นั้นจะมีการเหลาปลายหอกให้แหลมขึ้น ส่วนใหญ่ใช้ในการล่าสัตว์
+            </div>
+            <div class="spash" id="s1">
+                <img src="pic/spear/effect1.png" width="100%">
+            </div>
+            <div class="fish">
+                <img src="pic/spear/fish.png" width="100%">
+            </div>
+            <div id="spearTool">
+                <img src="pic/spear/spears.png" width="100%">
+            </div>
+            <div id="glassL">
+                <img src="pic/spear/grass-left.png" width="100%">
+            </div>
+            <div id="glassR">
+                <img src="pic/spear/grass-right.png" width="100%">
+            </div>
         </div>
-        
+
         <div class="page" id="bow" data-show="0">
-          <div class="clickme" data-show="1">คลิกเพื่อยิงธนู</div>
-          <div class="text bowContent" data-show="0">
-            <h1>ธนู (160,000 BC)</h1>
-            &emsp;&emsp;ธนูประดิษฐ์ขึ้นมาเพื่อใช้ในการล่าสัตว์และป้องกันตัวตั้งแต่ยุคดึกดำบรรพ์ 
-            ธนูถูกทำด้วยขนนกติดกาวและผูกติดกับลำธนูตั้งแต่ช่วงยุคหินกลาง</div>
+            <div class="clickme" data-show="1">คลิกเพื่อยิงธนู</div>
+            <div class="text bowContent" data-show="0">
+                <h1>ธนู (160,000 BC)</h1>
+                ธนูประดิษฐ์ขึ้นมาเพื่อใช้ในการล่าสัตว์และป้องกันตัวตั้งแต่ยุคดึกดำบรรพ์ ธนูถูกทำด้วยขนนกติดกาวและผูกติดกับลำธนูตั้งแต่ช่วงยุคหินกลาง
+            </div>
             <div class="archer" data-play="0">
-              <img src="pic/bow/archer.png" height="100%">
+                <img src="pic/bow/archer.png" height="100%">
             </div>
             <div class="arrow" data-play="0">
-              <img src="pic/bow/arroww.png" height="100%">
+                <img src="pic/bow/arroww.png" height="100%">
             </div>
         </div>
-        
+
         <div class="page" id="sword" data-show="0">
-          <div class="clickme" id="clickmeSword" data-show="1">เลือกทีมที่คุณคิดว่าจะชนะ</div>
-          <div class="text swordContent" data-show="0">
-            <h1>ดาบ (140,000 BC)</h1>
-            &emsp;&emsp;ดาบได้รับการพัฒนาในยุคสัมฤทธิ์ ซึ่งพัฒนามาจากดาบสั้น 
-            ดาบยังคงค่อนข้างสั้นและไม่มีครอสการ์ด สปาธา (Spatha) ซึ่งถูกพัฒนาขึ้นในกองทัพโรมันตอนปลาย
-            ได้กลายเป็นบรรพบุรุษขของดาบยุโรปในยุคกลาง
-          </div>
-          <div class="btn-l" id="swordBtn_L"><button class="btn" onclick="chooseTeam(1)">ทีมที่ 1</button></div>
-          <div class="btn-r" id="swordBtn_R"><button class="btn" onclick="chooseTeam(2)">ทีมที่ 2</button></div>
-          <div class="swordLeft">
-            <img src="pic/sword/sword-right.png" height="100%" id="sword_L">
-          </div>
-          <div class="swordRight">
-            <img src="pic/sword/sword-right.png" height="100%" id="sword_R">
-          </div>
-          <div class="peopleLeft">
-            <img src="pic/sword/crowded-people-left.png" width="100%">
-          </div>
-          <div class="peopleRight">
-            <img src="pic/sword/crowded-people-right.png" width="100%">
-          </div>
-          <div class="lightLeft">
-            <img src="pic/sword/light.png" width="100%">
-          </div>
-          <div class="lightRight">
-            <img src="pic/sword/light.png" width="100%">
-          </div>
-            
-          </div>
-          <div class="page" id="cannon" data-show="0">
-            <div class="clickme" data-show="1">คลิกเพื่อยิงระเบิด</div>
-            <div class="text cannonContent" data-show="0">
-              <h1>ปืนใหญ่ (1326)</h1>
-              &emsp;&emsp;อาวุธปืนที่มีความกว้างปากลำกล้องตั้งแต่ 20 มิลลิเมตรขึ้นไป
-              โดยมีระยะยิงกลางถึงไกล มีอำนาจทำลายล้างสูง โดยสามารถทำการยิงได้ทั้งแนววิถีราบหรือวิถีโค้ง 
+            <div class="clickme" id="clickmeSword" data-show="1">เลือกทีมที่คุณคิดว่าจะชนะ</div>
+            <div class="text swordContent" data-show="0">
+                <h1>ดาบ (140,000 BC)</h1>
+                ดาบได้รับการพัฒนาในยุคสัมฤทธิ์ ซึ่งพัฒนามาจากดาบสั้น ดาบยังคงค่อนข้างสั้นและไม่มีครอสการ์ด สปาธา (Spatha) ซึ่งถูกพัฒนาขึ้นในกองทัพโรมันตอนปลาย ได้กลายเป็นบรรพบุรุษขของดาบยุโรปในยุคกลาง
             </div>
-            <div class="cannonTool">
-              <img src="pic/cannon/cannon1.png" width="90%">
+            <div class="btn-l" id="swordBtn_L"><button class="btn" onclick="chooseTeam(1)">ทีมที่ 1</button></div>
+            <div class="btn-r" id="swordBtn_R"><button class="btn" onclick="chooseTeam(2)">ทีมที่ 2</button></div>
+            <div class="swordLeft">
+                <img src="pic/sword/sword-right.png" height="100%" id="sword_L">
             </div>
-            <div class="cannonAmmo">
-              <img src="pic/cannon/ammo.png" width="40%">
+            <div class="swordRight">
+                <img src="pic/sword/sword-right.png" height="100%" id="sword_R">
             </div>
-          </div>
-        
-        <div class="page" id="gun" data-show="0">
-          <div class="clickme" data-show="1">คลิกเพื่อยิงปืน</div>
-          <div class="text gunContent" data-show="0">
-            <h1>ปืนคาบชุด (1450)</h1>
-            &emsp;&emsp;ชาวโปรตุเกสได้นำปืนคาบชุดเข้ามาในอาณาจักรอยุธยา
-            ซึ่งนำมาใช้สู้รบกับพม่าจนได้รับชัยชนะอย่างง่ายดายในปี พ.ศ. 2089
-          </div>
-          <div class="gunner" data-play="0">
-            <img src="pic/gun/shooter.png" width="90%">
-          </div>
-          <div class="muzzlesmoke" data-play="0">
-            <img src="pic/gun/smoke.png" width="90%">
-          </div>
-          <div class="gunner-arm" data-play="0">
-            <img src="pic/gun/arm-right.png" width="90%">
-          </div>
+            <div class="peopleLeft">
+                <img src="pic/sword/crowded-people-left.png" width="100%">
+            </div>
+            <div class="peopleRight">
+                <img src="pic/sword/crowded-people-right.png" width="100%">
+            </div>
+            <div class="lightLeft">
+                <img src="pic/sword/light.png" width="100%">
+            </div>
+            <div class="lightRight">
+                <img src="pic/sword/light.png" width="100%">
+            </div>
 
         </div>
-        
-        <div class="page" id="bazooka" data-show="0">
-          <div class="clickme" data-show="1">คลิกเพื่อยิงจรวด</div>
-          <div class="text bazookaContent" data-show="0">
-            <h1>บาซูก้า (1942)</h1>
-            &emsp;&emsp;อาวุธเครื่องยิงจรวดต่อสู้รถถังแบบไร้แรงสะท้อนถอยหลังขนาดพกพา 
-            สามารถใช้ได้กับหัวรบระเบิดแรงสูงต่อต้านรถถังที่จะยิงเข้าใส่กับยานพาหนะหุ้มเกราะและป้อมปราการบังเกอร์
-          </div>
-          <div class="big-smoke">
-            <img src="pic/bazooka/big-smoke.png" width="100%">
-          </div>
-          <div class="bazookaAmmo" data-play="0">
-            <img src="pic/bazooka/bomb-ammo.png" width="100%">
-          </div>
-          <div class="bazooka-shooter" data-play="0">
-            <img src="pic/bazooka/bazooka-shooter.png" width="100%">
-          </div>
-        </div>
-        
-        <div class="page" id="atomicbomb" data-show="0">
-          <div class="clickme" data-show="1">คลิกไฟเพื่อดับไฟ</div>
-          <div class="text atomicContent" data-show="0">
-            <h1>นิวเคลียร์ (1945)</h1>
-            &emsp;&emsp;อาวุธนิวเคลียร์เพียงสองชิ้นเท่านั้นที่เคยใช้ตลอดห้วงการสงคราม 
-            ลูกแรกมีชื่อรหัสว่า "ลิตเติลบอย" ถูกจุดระเบิดเหนือนครฮิโรชิมาของญี่ปุ่น
-            ลูกที่สองมีชื่อรหัสว่า "แฟตแมน" ระเบิดเหนือนางาซากิ ประเทศญี่ปุ่น
-          </div>
-          <div class="heliLeft">
-            <img src="pic/helicopter/helicopter-left.png" width="90%">
-          </div>
-          <div class="heliRight">
-            <img src="pic/helicopter/helicopter-right.png" width="90%">
-          </div>
-          <div class="heli-bigsmokeL">
-            <img src="pic/helicopter/big-smoke.png" width="90%">
-          </div>
-          <div class="fire" id="fire1" onclick="catchFire(this)" data-show="1">
-          <img src="pic/helicopter/big-fire.png" width="90%">
-          </div>
-          <div class="fire" id="fire2" onclick="catchFire(this)" data-show="1">
-            <img src="pic/helicopter/big-fire.png" width="90%">
+        <div class="page" id="cannon" data-show="0">
+            <div class="clickme" data-show="1">คลิกเพื่อยิงระเบิด</div>
+            <div class="text cannonContent" data-show="0">
+                <h1>ปืนใหญ่ (1326)</h1>
+                อาวุธปืนที่มีความกว้างปากลำกล้องตั้งแต่ 20 มิลลิเมตรขึ้นไป โดยมีระยะยิงกลางถึงไกล มีอำนาจทำลายล้างสูง โดยสามารถทำการยิงได้ทั้งแนววิถีราบหรือวิถีโค้ง
             </div>
-          <div class="fire" id="fire3" onclick="catchFire(this)" data-show="1">
-            <img src="pic/helicopter/big-fire.png" width="90%">
-          </div>
-          <div class="fire" id="fire4" onclick="catchFire(this)" data-show="1">
-            <img src="pic/helicopter/big-fire.png" width="90%">
-          </div>
-          <div class="btn-reset" data-show="0">
-            <button class="btn" onclick="resetFire()">รีเซ็ท</button>
-          </div>
+            <div class="cannonTool">
+                <img src="pic/cannon/cannon1.png" width="90%">
+            </div>
+            <div class="cannonAmmo">
+                <img src="pic/cannon/ammo.png" width="40%">
+            </div>
+        </div>
+
+        <div class="page" id="gun" data-show="0">
+            <div class="clickme" data-show="1">คลิกเพื่อยิงปืน</div>
+            <div class="text gunContent" data-show="0">
+                <h1>ปืนคาบชุด (1450)</h1>
+                ชาวโปรตุเกสได้นำปืนคาบชุดเข้ามาในอาณาจักรอยุธยา ซึ่งนำมาใช้สู้รบกับพม่าจนได้รับชัยชนะอย่างง่ายดายในปี พ.ศ. 2089
+            </div>
+            <div class="gunner" data-play="0">
+                <img src="pic/gun/shooter.png" width="90%">
+            </div>
+            <div class="muzzlesmoke" data-play="0">
+                <img src="pic/gun/smoke.png" width="90%">
+            </div>
+            <div class="gunner-arm" data-play="0">
+                <img src="pic/gun/arm-right.png" width="90%">
+            </div>
+
+        </div>
+
+        <div class="page" id="bazooka" data-show="0">
+            <div class="clickme" data-show="1">คลิกเพื่อยิงจรวด</div>
+            <div class="text bazookaContent" data-show="0">
+                <h1>บาซูก้า (1942)</h1>
+                อาวุธเครื่องยิงจรวดต่อสู้รถถังแบบไร้แรงสะท้อนถอยหลังขนาดพกพา สามารถใช้ได้กับหัวรบระเบิดแรงสูงต่อต้านรถถังที่จะยิงเข้าใส่กับยานพาหนะหุ้มเกราะและป้อมปราการบังเกอร์
+            </div>
+            <div class="big-smoke">
+                <img src="pic/bazooka/big-smoke.png" width="100%">
+            </div>
+            <div class="bazookaAmmo" data-play="0">
+                <img src="pic/bazooka/bomb-ammo.png" width="100%">
+            </div>
+            <div class="bazooka-shooter" data-play="0">
+                <img src="pic/bazooka/bazooka-shooter.png" width="100%">
+            </div>
+        </div>
+
+        <div class="page" id="atomicbomb" data-show="0">
+            <div class="clickme" data-show="1">คลิกไฟเพื่อดับไฟ</div>
+            <div class="text atomicContent" data-show="0">
+                <h1>นิวเคลียร์ (1945)</h1>
+                อาวุธนิวเคลียร์เพียงสองชิ้นเท่านั้นที่เคยใช้ตลอดห้วงการสงคราม ลูกแรกมีชื่อรหัสว่า "ลิตเติลบอย" ถูกจุดระเบิดเหนือนครฮิโรชิมาของญี่ปุ่น ลูกที่สองมีชื่อรหัสว่า "แฟตแมน" ระเบิดเหนือนางาซากิ ประเทศญี่ปุ่น
+            </div>
+            <div class="heliLeft">
+                <img src="pic/helicopter/helicopter-left.png" width="90%">
+            </div>
+            <div class="heliRight">
+                <img src="pic/helicopter/helicopter-right.png" width="90%">
+            </div>
+            <div class="heli-bigsmokeL">
+                <img src="pic/helicopter/big-smoke.png" width="90%">
+            </div>
+            <div class="fire" id="fire1" onclick="catchFire(this)" data-show="1">
+                <img src="pic/helicopter/big-fire.png" width="90%">
+            </div>
+            <div class="fire" id="fire2" onclick="catchFire(this)" data-show="1">
+                <img src="pic/helicopter/big-fire.png" width="90%">
+            </div>
+            <div class="fire" id="fire3" onclick="catchFire(this)" data-show="1">
+                <img src="pic/helicopter/big-fire.png" width="90%">
+            </div>
+            <div class="fire" id="fire4" onclick="catchFire(this)" data-show="1">
+                <img src="pic/helicopter/big-fire.png" width="90%">
+            </div>
+            <div class="btn-reset" data-show="0">
+                <button class="btn" onclick="resetFire()">รีเซ็ท</button>
+            </div>
         </div>
 
         <div class="page" id="Cyber" data-show="0">
-          <div class="text CyberContent" data-show="0">
-            <h1>Cyber Warfare (2000)</h1>
-            &emsp;&emsp;การใช้เทคโนโลยีคอมพิวเตอร์เพื่อขัดขวางกิจกรรมของรัฐหรือองค์กร โดยเฉพาะอย่างยิ่งการโจมตีที่มีเจตนาเกี่ยวกับระบบสารสนเทศเพื่อวัตถุประสงค์เชิงกลยุทธ์หรือการทหาร
-          </div>
-          <div class="cyber-arm">
-            <img class ="cyber-s"src="pic/cyber/cyber-arm.png" width="100%">
-          </div>
-          <div class="emote" data-show="0">
-            <img src="pic/cyber/think.png">
-          </div>
-          <div id="passwordInput">
-            <div class="pw-text">กรุณากรอกรหัสที่เป็นตัวเลข</div>
-            <input type="text" class="pw-input" size="1" maxlength="1" oninput="checkNumber(this)">
-            <input type="text" class="pw-input" size="1" maxlength="1" oninput="checkNumber(this)">
-            <input type="text" class="pw-input" size="1" maxlength="1" oninput="checkNumber(this)">
-            <input type="text" class="pw-input" size="1" maxlength="1" oninput="checkNumber(this)">
-            <div class="btn-login">
-              <button class="btn" onclick="login()">ล็อกอิน</button>
-              <div class="login-text" id="login-text-true" data-show="0">เข้าสู่ระบบสำเร็จ</div>
-              <div class="login-text" id="login-text-false" data-show="0">เข้าสู่ระบบล้มเหลว</div>
+            <div class="text CyberContent" data-show="0">
+                <h1>Cyber Warfare (2000)</h1>
+                การใช้เทคโนโลยีคอมพิวเตอร์เพื่อขัดขวางกิจกรรมของรัฐหรือองค์กร โดยเฉพาะอย่างยิ่งการโจมตีที่มีเจตนาเกี่ยวกับระบบสารสนเทศเพื่อวัตถุประสงค์เชิงกลยุทธ์หรือการทหาร
             </div>
-            <div class="pw-hint">
-              <div class="hint-text" data-show="0">Hint 1: หน้าจอคอมมีอะไรนะ</div>
-              <div class="hint-text" data-show="0">Hint 2: เส้นบนจอไม่เหมือนกันเลย</div>
-              <div class="hint-text" data-show="0">Hint 3: ลองนับเส้นบนจอของแต่ละจอดีกว่า</div>
-              <div class="hint-text" data-show="0">Hint 4: 1 มี 6 เส้น 2 มี 2 เส้น 3 มี 4 เส้น 4 มี 8 เส้น</div>
+            <div class="cyber-arm">
+                <img class="cyber-s" src="pic/cyber/cyber-arm.png" width="100%">
             </div>
-          </div>
+            <div class="emote" data-show="0">
+                <img src="pic/cyber/think.png">
+            </div>
+            <div id="passwordInput">
+                <div class="pw-text">กรุณากรอกรหัสที่เป็นตัวเลข</div>
+                <input type="text" class="pw-input" size="1" maxlength="1" oninput="checkNumber(this)">
+                <input type="text" class="pw-input" size="1" maxlength="1" oninput="checkNumber(this)">
+                <input type="text" class="pw-input" size="1" maxlength="1" oninput="checkNumber(this)">
+                <input type="text" class="pw-input" size="1" maxlength="1" oninput="checkNumber(this)">
+                <div class="btn-login">
+                    <button class="btn" onclick="login()">ล็อกอิน</button>
+                    <div class="login-text" id="login-text-true" data-show="0">เข้าสู่ระบบสำเร็จ</div>
+                    <div class="login-text" id="login-text-false" data-show="0">เข้าสู่ระบบล้มเหลว</div>
+                </div>
+                <div class="pw-hint">
+                    <div class="hint-text" data-show="0">Hint 1: หน้าจอคอมมีอะไรนะ</div>
+                    <div class="hint-text" data-show="0">Hint 2: เส้นบนจอไม่เหมือนกันเลย</div>
+                    <div class="hint-text" data-show="0">Hint 3: ลองนับเส้นบนจอของแต่ละจอดีกว่า</div>
+                    <div class="hint-text" data-show="0">Hint 4: 1 มี 6 เส้น 2 มี 2 เส้น 3 มี 4 เส้น 4 มี 8 เส้น</div>
+                </div>
+            </div>
         </div>
-        
+
         <div class="page" id="drone" data-show="0">
-          <div class="text droneContent" data-show="0">
-            <h1>Drone (2002)</h1>
-            &emsp;&emsp;อากาศยานไร้คนขับเชิงพาณิชย์ที่ปรับใช้เป็นอาวุธ 
-            การโจมตีมักเกี่ยวข้องกับการยิงขีปนาวุธหรือปล่อยระเบิดใส่เป้าหมาย 
-          </div>
-          <div class="flying-drones">
-            <img src="pic/drone/group-drone.png" >
-          </div>
-          <div class="flying-drones flying-right">
-            <img src="pic/drone/group-drone.png" >
-          </div>
-          <div class="flying-drone" style="--i:0; --s:3;" onclick="shootDrone(0)">
-            <img class="drones-img" src="pic/drone/drone.png"style="--i:0;">
-          </div>
-          <div class="flying-drone" style="--i:1; --s:1;" onclick="shootDrone(1)">
-            <img class="drones-img" src="pic/drone/drone.png" style="--i:1;">
-          </div>
-          <div class="flying-drone" style="--i:2; --s:5;" onclick="shootDrone(2)">
-            <img class="drones-img" src="pic/drone/drone.png" style="--i:2;">
-          </div>
-          <div class="flying-drone" style="--i:3; --s:6;" onclick="shootDrone(3)">
-            <img class="drones-img" src="pic/drone/drone.png" style="--i:3;">
-          </div>
-          <div class="flying-drone" style="--i:4; --s:2;" onclick="shootDrone(4)">
-            <img class="drones-img" src="pic/drone/drone.png" style="--i:4;">
-          </div>
-          <div class="flying-drone" style="--i:5; --s:7;" onclick="shootDrone(5)">
-            <img class="drones-img" src="pic/drone/drone.png" style="--i:5;">
-          </div>
-          <div class="btn-reset" data-show="0">
-            <button class="btn" onclick="resetDrone()">รีเซ็ท</button>
-          </div>
+            <div class="text droneContent" data-show="0">
+                <h1>Drone (2002)</h1>
+                อากาศยานไร้คนขับเชิงพาณิชย์ที่ปรับใช้เป็นอาวุธ การโจมตีมักเกี่ยวข้องกับการยิงขีปนาวุธหรือปล่อยระเบิดใส่เป้าหมาย
+            </div>
+            <div class="flying-drones">
+                <img src="pic/drone/group-drone.png">
+            </div>
+            <div class="flying-drones flying-right">
+                <img src="pic/drone/group-drone.png">
+            </div>
+            <div class="flying-drone" style="--i:0; --s:3;" onclick="shootDrone(0)">
+                <img class="drones-img" src="pic/drone/drone.png" style="--i:0;">
+            </div>
+            <div class="flying-drone" style="--i:1; --s:1;" onclick="shootDrone(1)">
+                <img class="drones-img" src="pic/drone/drone.png" style="--i:1;">
+            </div>
+            <div class="flying-drone" style="--i:2; --s:5;" onclick="shootDrone(2)">
+                <img class="drones-img" src="pic/drone/drone.png" style="--i:2;">
+            </div>
+            <div class="flying-drone" style="--i:3; --s:6;" onclick="shootDrone(3)">
+                <img class="drones-img" src="pic/drone/drone.png" style="--i:3;">
+            </div>
+            <div class="flying-drone" style="--i:4; --s:2;" onclick="shootDrone(4)">
+                <img class="drones-img" src="pic/drone/drone.png" style="--i:4;">
+            </div>
+            <div class="flying-drone" style="--i:5; --s:7;" onclick="shootDrone(5)">
+                <img class="drones-img" src="pic/drone/drone.png" style="--i:5;">
+            </div>
+            <div class="btn-reset" data-show="0">
+                <button class="btn" onclick="resetDrone()">รีเซ็ท</button>
+            </div>
         </div>
-        
+
         <div class="page end" id="end01" data-show="0">
-          <div class="endContent">
-            <h1>จากอาวุธที่เห็นก่อนหน้านี้</h1>
-          </div>
+            <div class="endContent">
+                <h1>จากอาวุธที่เห็นก่อนหน้านี้</h1>
+            </div>
         </div>
 
         <div class="page end" id="end02" data-show="0">
-          <div class="endContent">
-            <h1>ในสมัยก่อน มนุษย์ได้พัฒนาอาวุธ<br>มาใช้ประโยชน์ในการดำรงชีวิต</h1>
-          </div>
-          <div id="end-axe1">
-            <img src="pic/axe/axee.png" width="100%">
-          </div>
-          <div id="end-axe2">
-            <img src="pic/axe/axee.png" width="100%">
-          </div>
-          <div id="spearfish1">
-            <img src="pic/spear/spears.png" width="100%">
-          </div>
-          <div id="spearfish2">
-            <img src="pic/spear/spears.png" width="100%">
-          </div>
-          <div id="spearfish3">
-            <img src="pic/spear/spears.png" width="100%">
-          </div>
-          <div id="fishend1">
-            <img src="pic/spear/fish.png" width="100%">
-          </div>
-          <div id="fishend2">
-            <img src="pic/spear/fish.png" width="100%">
-          </div>
-          <div id="fishend3">
-            <img src="pic/spear/fish.png" width="100%">
-          </div>
+            <div class="endContent">
+                <h1>ในสมัยก่อน มนุษย์ได้พัฒนาอาวุธ<br>มาใช้ประโยชน์ในการดำรงชีวิต</h1>
+            </div>
+            <div id="end-axe1">
+                <img src="pic/axe/axee.png" width="100%">
+            </div>
+            <div id="end-axe2">
+                <img src="pic/axe/axee.png" width="100%">
+            </div>
+            <div id="spearfish1">
+                <img src="pic/spear/spears.png" width="100%">
+            </div>
+            <div id="spearfish2">
+                <img src="pic/spear/spears.png" width="100%">
+            </div>
+            <div id="spearfish3">
+                <img src="pic/spear/spears.png" width="100%">
+            </div>
+            <div id="fishend1">
+                <img src="pic/spear/fish.png" width="100%">
+            </div>
+            <div id="fishend2">
+                <img src="pic/spear/fish.png" width="100%">
+            </div>
+            <div id="fishend3">
+                <img src="pic/spear/fish.png" width="100%">
+            </div>
         </div>
 
         <div class="page end" id="end03" data-show="0">
-          <div class="endContent">
-            <h1>แต่หลังจากที่มษุษย์ได้พัฒนาอาวุธมาเรื่อยๆ<br>จากการที่เอามาใช้ในการดำรงชีวิต</h1>
-          </div>
+            <div class="endContent">
+                <h1>แต่หลังจากที่มษุษย์ได้พัฒนาอาวุธมาเรื่อยๆ<br>จากการที่เอามาใช้ในการดำรงชีวิต</h1>
+            </div>
         </div>
 
         <div class="page end" id="end04" data-show="0">
-          <div class="endContent">
-            <h1>กลับกลายมาเป็นอาวุธสงคราม<br>ที่ก่อโศกนาฎกรรมครั้งยิ่งใหญ่</h1>
-          </div>
-          <div class="heliLeft">
-            <img src="pic/helicopter/helicopter-left.png" width="90%">
-          </div>
-          <div class="heliRight">
-            <img src="pic/helicopter/helicopter-right.png" width="90%" >
-          </div>
+            <div class="endContent">
+                <h1>กลับกลายมาเป็นอาวุธสงคราม<br>ที่ก่อโศกนาฎกรรมครั้งยิ่งใหญ่</h1>
+            </div>
+            <div class="heliLeft">
+                <img src="pic/helicopter/helicopter-left.png" width="90%">
+            </div>
+            <div class="heliRight">
+                <img src="pic/helicopter/helicopter-right.png" width="90%">
+            </div>
         </div>
 
         <div class="page end" id="end05" data-show="0">
-          <div class="endContent">
-            <h1>สุดท้ายแล้ว จนถึงปัจจุบัน<br>เราจะเอาอาวุธพวกนั้น มาใช้ฆ่าฟันกันเองจริงหรอ</h1>
-          </div>
-          <div id="droneend">
-            <img src="pic/topic/drone.png" width="100%">
-          </div>
-          <div class="p-left" id="p-leftend">
-            <img src="pic/topic/human1.png" width="100%">
-          </div>
-          <div class="p-right" id="p-rightend">
-            <img src="pic/topic/human2.png" width="100%">
-          </div>
-          <div class="spear" id="spearend">
-            <img src="pic/topic/spear.png" width="100%">
-          </div>
-          <div class="spear" id="spearend2">
-            <img src="pic/topic/spear.png" width="100%">
-          </div>
-          <div class="spear" id="spearend3">
-            <img src="pic/topic/spear.png" width="100%">
-          </div>
+            <div class="endContent">
+                <h1>สุดท้ายแล้ว จนถึงปัจจุบัน<br>เราจะเอาอาวุธพวกนั้น มาใช้ฆ่าฟันกันเองจริงหรอ</h1>
+            </div>
+            <div id="droneend">
+                <img src="pic/topic/drone.png" width="100%">
+            </div>
+            <div class="p-left" id="p-leftend">
+                <img src="pic/topic/human1.png" width="100%">
+            </div>
+            <div class="p-right" id="p-rightend">
+                <img src="pic/topic/human2.png" width="100%">
+            </div>
+            <div class="spear" id="spearend">
+                <img src="pic/topic/spear.png" width="100%">
+            </div>
+            <div class="spear" id="spearend2">
+                <img src="pic/topic/spear.png" width="100%">
+            </div>
+            <div class="spear" id="spearend3">
+                <img src="pic/topic/spear.png" width="100%">
+            </div>
         </div>
 
         <div class="page end" id="end06" data-show="0">
-          <div class="endContent">
-            <h1>แล้วคุณหล่ะ ถ้ามีอาวุธไว้ครอบครอง 
-            <br>คุณจะทำอะไร?</h1>
-            <div class="btn-end">
-              <button class="btn" onclick="goTo(1)">กลับไปยังจุดเริ่มต้น</button>
-            </div>
+            <div class="endContent">
+                <h1>แล้วคุณหล่ะ ถ้ามีอาวุธไว้ครอบครอง
+                    <br>คุณจะทำอะไร?</h1>
+                <div class="btn-end">
+                    <button class="btn" onclick="goTo(1)">กลับไปยังจุดเริ่มต้น</button>
+                </div>
 
-          </div>
-          <div class="credit">
-            <p>สนับสนุนโดย <br>
-              กลุ่ม 1212312121 Hey! <br>
-              วิชา Multimedia Programming</p>
-          </div>
+            </div>
+            <div class="credit">
+                <p>สนับสนุนโดย <br> กลุ่ม 1212312121 Hey! <br> วิชา Multimedia Programming</p>
+            </div>
         </div>
-      </div>
-      <script src="script.js"></script>
+    </div>
+    <script src="script.js"></script>
 </body>
+
 </html>
