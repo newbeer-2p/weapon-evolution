@@ -223,12 +223,8 @@ function chooseTeam(team){
   let light_l = document.querySelectorAll(".lightLeft")[0];
   let light_r = document.querySelectorAll(".lightRight")[0];
 
-  if (team == 1){
-    btn_r.style.display = "none";
-  }
-  else{
-    btn_l.style.display = "none";
-  }
+  btn_r.style.display = "none";
+  btn_l.style.display = "none";
 
   document.querySelectorAll(".swordContent")[0].style.opacity = "1"
   let rand_win = parseInt(Math.random() * 2 +1);
@@ -254,7 +250,7 @@ function chooseTeam(team){
     document.querySelectorAll(".clickme")[3].innerHTML = `คุณแพ้<div>ทีมที่ ${rand_win} ชนะ</div><br>คลิกเพื่อเริ่มใหม่`
   }
   window.setTimeout(function(){
-    swordPlaying = true
+    swordPlaying = true;
   }, 500)
 }
 
