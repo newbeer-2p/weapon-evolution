@@ -247,7 +247,11 @@ button:hover {
     bottom: 100px;
     animation: staring 1s infinite alternate linear;
 }
-
+p{
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
 
 /* Axe Page */
 
@@ -817,7 +821,7 @@ button:hover {
 
 .end {
     font-size: calc(100vw / 50);
-    color: #000000;
+    color: black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -830,7 +834,8 @@ button:hover {
 
 #end01,
 #end03 {
-    background-image: linear-gradient(white, black);
+    color: white;
+    background-color: #000000;
 }
 
 #end02 {
