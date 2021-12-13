@@ -715,7 +715,7 @@ p{
 
 .btn-end>button {
     font-size: 48px;
-    background: darkgrey;
+    background: rgb(79, 141, 89);
 }
 
 .btn-login>button {
@@ -870,15 +870,19 @@ p{
 
 .credit {
     position: fixed;
-    right: 0;
-    bottom: 0;
-    text-align: right;
-    margin-right: 20px;
-    padding: 10px;
-    background-color: rgb(255, 255, 255);
-    border-radius: 25px;
+    top: 0;
+    width: 100%;
+    animation: asd 2s infinite linear;
 }
-
+@keyframes asd{
+    14%{text-shadow:0px 0px 2px red;}
+    28%{text-shadow:0px 0px 2px orange;}
+    42%{text-shadow:0px 0px 2px yellow;}
+    56%{text-shadow:0px 0px 2px green;}
+    70%{text-shadow:0px 0px 2px blue;}
+    84%{text-shadow:0px 0px 2px cyan;}
+    100%{text-shadow:0px 0px 2px purple;}
+}
 #droneend {
     position: fixed;
     right: 10vw;
