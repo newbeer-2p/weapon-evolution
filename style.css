@@ -259,6 +259,7 @@ p{
     background: url("pic/axe/background.png");
     background-position: bottom;
     background-size: cover;
+    cursor: pointer;
 }
 
 #axe .box {
@@ -297,6 +298,7 @@ p{
     background: url("pic/spear/spearscene.png");
     background-position: bottom;
     background-size: cover;
+    cursor: pointer;
 }
 
 #spear .box {
@@ -352,6 +354,7 @@ p{
     background: url("pic/bow/archerscene.png");
     background-position: left bottom;
     background-size: cover;
+    cursor: pointer;
 }
 
 #bow .bowContent {
@@ -479,6 +482,7 @@ p{
     background: url("pic/cannon/cannonscene.png");
     background-position: bottom;
     background-size: cover;
+    cursor: pointer;
 }
 
 #cannon .cannonContent {
@@ -510,6 +514,7 @@ p{
     background: url("pic/gun/gunscene.png");
     background-position: bottom;
     background-size: cover;
+    cursor: pointer;
 }
 
 #gun .gunContent {
@@ -553,6 +558,7 @@ p{
     background: url("pic/bazooka/bazukascene.png");
     background-position: bottom;
     background-size: cover;
+    cursor: pointer;
 }
 
 #bazooka>.clickme {
